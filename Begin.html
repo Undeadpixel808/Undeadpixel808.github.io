@@ -1,1 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <style>
+        
+        /* Centering and Styling */
+        body {
+            text-align: center;
+            background-color: black;
+            color: whitesmoke;
+            font-size: 20px;
+            font-family: 'Courier New', monospace;
+            margin: 0;
+        }
 
+        h1 { color: whitesmoke; }
+        
+        /* Container to center content */
+        .container {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        /* Description box */
+        .descriptionBox {
+            width: 700px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .optionButtonOne {
+            position: absolute;
+            top: 50%;
+            background-color: black;
+            color: white;
+            font-family: 'Courier New', monospace;
+            font-size: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 15px 30px;
+            border: 2px solid white;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .optionButtonOne:hover {
+            background-color: white;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="descriptionBox">
+            <p>You awaken, head throbbing, the taste of whiskey still on your tongue. 
+              The floor beneath you is sticky, and the air smells of dust and rain. 
+              The dim light sways on the ceiling above, casting an uneven light over the tavern. 
+              The room is eerily quiet.<br>
+
+              Where is everyone? You need to find out what happened.</p>
+        </div>
+
+        <button class="optionButtonOne">Begin</button>
+    </div>
+
+</body>
+</html>
