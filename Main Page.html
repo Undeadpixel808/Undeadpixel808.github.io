@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <style>
+        /* Centering and Styling */
+        body {
+            text-align: center;
+            background-color: black;
+            color: whitesmoke;
+            font-size: 20px;
+            font-family: 'Courier New', monospace;
+            margin: 0;
+        }
+
+        h1 { color: whitesmoke; }
+
+        /* Prevent underlining on links */
+        a:link, a:visited, a:hover, a:active {
+            text-decoration: none;
+        }
+
+        /* Container to center content */
+        .container {
+            position: relative;
+            height: 100vh; /* Full screen height */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        /* Description box */
+        .descriptionBox {
+            width: 700px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Button Styling */
+        .optionButtonOne {
+            position: absolute;
+            top: 50%; /* Move 65% down the screen */
+            background-color: black;
+            color: white;
+            font-family: 'Courier New', monospace;
+            font-size: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 15px 30px;
+            border: 2px solid white;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .optionButtonOne:hover {
+            background-color: white;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="descriptionBox">
+            <p>You're a cowboy in Hangman's Hollow.  
+            You awake one afternoon in your favorite tavern,  
+            The Rusty Oak, disoriented and hungover with no recollection of what happened yesterday.  
+            Your task is to make it out of the tavern and  
+            discover what happened to your town, and make it out alive.... if you can.</p>
+        </div>
+
+        <button class="optionButtonOne">Begin</button>
+    </div>
+
+</body>
+</html>
