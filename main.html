@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container preventSelect">
+        <button class="fullscreenButton" type="submit" onclick="fullscreenToggle()">
+            <img src="fullscreen_icon.png"></img>
+        </button>
+        
+        <div class="descriptionBox">
+            <p id="storyText">You're a cowboy in Hangman's Hollow. You awake one afternoon in your favorite tavern, The Rusty Oak, 
+                disoriented and hungover with no recollection of what happened yesterday. 
+                Your task is to make it out of the tavern and discover what happened to your town, and make it out alive....if you can.</p>
+        </div>
+
+        <div class="illustrationBox">
+            <div class="illustrationMargin"></div>
+            <img id="illustrationImage" src="kfc.jpg" width="1000" height="500" alt="Illustration">
+        </div>
+
+        <div class="choicesContainer">
+            <button id="beginButton" class="optionButton" onclick="startGame()">Begin</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,4 +1,4 @@
-/* General Styles */
+/* General Styling */
 body {
     text-align: center;
     background-color: black;
@@ -8,65 +8,115 @@ body {
     margin: 0;
 }
 
-/* Link Styles */
-a {
+/* Illustration box in the style of a stamp */
+.illustrationBox{
+    /* Change this value to adjust the stamp perforation size: */
+    --radius: 15px;
+  
+    background-image: 
+      radial-gradient(
+        var(--radius),
+        transparent 98%,
+        whitesmoke
+      ),
+      linear-gradient(whitesmoke 0 0);
+    background-repeat: 
+      round, 
+      no-repeat;
+    background-position:
+      calc(var(--radius) * -1.5) calc(var(--radius) * -1.5),
+      50%;
+    background-size:
+      calc(var(--radius) * 3) calc(var(--radius) * 3),
+      calc(100% - var(--radius) * 3) calc(100% - var(--radius) * 3);
+
+    width: 1100px;
+    height: 600px;
     position: absolute;
-    display: block;
-    text-align: center;
+    inset: 0;
+    bottom: 26%;
+    margin: auto;
+}
+
+.illustrationMargin{
+    height: 50px;
+}
+
+/* Prevent user from selecting text */
+.preventSelect {
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Forgotten title page */
+a {
     color: whitesmoke;
     text-decoration: none;
+    position: absolute;
+    display: block;
     font-size: 110px;
     top: 47%;
+    text-align: center;
+    cursor: pointer;
 }
 
-/* Header Styles */
-h1 {
-    color: whitesmoke;
-}
-
-/* Containers */
+/* Layout container */
 .container {
     position: relative;
     height: 100vh;
+    width: 100vw;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
 }
 
-/* Text Box */
+/* Story description box */
 .descriptionBox {
+    position: absolute;
     width: 700px;
-    text-align: center;
-    margin-bottom: 20px;
+    height: auto;
+    padding: 20px;
+    bottom: 4%;
 }
 
-/* Illustration Box */
-.illustrationBox {
+/* Dynamic button container */
+.choicesContainer {
     position: absolute;
-    top: 19%;
-    border: 8px ridge whitesmoke;
-    width: 1100px;
-    height: 600px;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    margin-top: 20px;
+    bottom: 2%;
 }
 
-/* Button Styling */
-.optionButtonOne {
-    position: absolute;
-    top: 88%;
+/* Buttons styling */
+.optionButton {
     background-color: black;
     color: white;
     font-family: 'Courier New', monospace;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
-    text-transform: uppercase;
-    padding: 15px 30px;
+    padding: 10px 20px;
     border: 2px solid white;
     cursor: pointer;
     transition: background 0.3s;
+    text-transform: uppercase;
+    width: 300px;
 }
 
-.optionButtonOne:hover {
+.optionButton:hover {
     background-color: white;
     color: black;
+}
+
+/* Fullscreen button */
+.fullscreenButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
 }
