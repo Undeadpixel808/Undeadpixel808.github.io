@@ -10,7 +10,7 @@ const storyData = {
         ]
     },
     Try_the_front_door: {
-        description: "You approach the heavy wooden door, its hinges groaning as you push against it...",
+        description: "Locked. You need to find the key.",
         choices: [
             { text: "Check the bar", image: "subway.jpg", next: "Check_the_bar" }
         ]
