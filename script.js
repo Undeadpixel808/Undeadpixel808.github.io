@@ -16,7 +16,8 @@ const storyData = {
         ]
     },
     Check_the_bar: {
-        description: "You step toward the bar, scanning for any sign of the bartender...",
+        description: "You stumble over to the bar and notice dots of blood near a large crack in the counter's wood. That's new." +
+                     " Next to the crack sits an envelope, a bottle of whiskey, and a safe.",
         choices: [
             { text: "Open the safe", image: "kfc.jpg", next: "Open_the_safe" },
             { text: "Open the envelope", image: "subway.jpg", next: "Open_the_envelope" },
