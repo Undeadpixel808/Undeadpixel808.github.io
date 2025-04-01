@@ -118,4 +118,9 @@ a {
     background: transparent;
     border: none;
     cursor: pointer;
+    transition: 0.3s;
+}
+
+.fullscreenButton:hover {
+    filter: opacity(0.5);
 }
