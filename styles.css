@@ -11,7 +11,7 @@ body {
 /* Illustration box in the style of a stamp */
 .illustrationBox{
     /* Change this value to adjust the stamp perforation size: */
-    --radius: 15px;
+    --radius: 16px;
   
     background-image: 
       radial-gradient(
@@ -34,7 +34,7 @@ body {
     height: 600px;
     position: absolute;
     inset: 0;
-    bottom: 26%;
+    bottom: 12%;
     margin: auto;
 }
 
@@ -77,8 +77,7 @@ a {
     position: absolute;
     width: 700px;
     height: auto;
-    padding: 20px;
-    bottom: 4%;
+    bottom: 7%;
 }
 
 /* Dynamic button container */
@@ -114,7 +113,7 @@ a {
 /* Fullscreen button */
 .fullscreenButton {
     position: absolute;
-    top: 10px;
+    bottom: 10px;
     right: 10px;
     background: transparent;
     border: none;

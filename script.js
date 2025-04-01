@@ -9,12 +9,14 @@ const storyData = {
             { text: "Check the bar", image: "subway.jpg", next: "Check_the_bar" }
         ]
     },
+    
     Try_the_front_door: {
         description: "Locked. You need to find the key.",
         choices: [
             { text: "Check the bar", image: "subway.jpg", next: "Check_the_bar" }
         ]
     },
+
     Check_the_bar: {
         description: "You stumble over to the bar and notice dots of blood near a large crack in the counter's wood. That's new." +
                      " Next to the crack sits an envelope, a bottle of whiskey, and a safe.",
