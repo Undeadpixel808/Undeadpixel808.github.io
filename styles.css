@@ -59,6 +59,12 @@ a {
     top: 47%;
     text-align: center;
     cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Indicate that title is clickable with change in brightness */
+a:hover {
+    filter: opacity(0.5);
 }
 
 /* Layout container */
@@ -121,6 +127,7 @@ a {
     transition: 0.3s;
 }
 
+/* Indicate that button is clickable with change in brightness */
 .fullscreenButton:hover {
     filter: opacity(0.5);
 }
