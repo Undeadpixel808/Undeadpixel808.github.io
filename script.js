@@ -7,13 +7,23 @@
 - MAKE CRYPT PUZZLE
 - MAKE ENDING SCREEN?
 - MAKE HOME BUTTON?
-- MAKE RESTART BUTTON?
 */
 
 
 // Story structure as an object
 const storyData = {
-    start: {
+
+    Start: {
+        description: "You're a cowboy in Hangman's Hollow. You awake one afternoon in your favorite tavern, The Rusty Oak, "+
+                    "disoriented and hungover with no recollection of what happened yesterday. "+
+                    "Your task is to make it out of the tavern and discover what happened to your town, and make it out alive.... If you can.",
+
+        choices: [
+            { text: "Begin", image: "spookytown.webp", next: "Begin" },
+        ]
+    },
+
+    Begin: {
         description: "You awaken, head throbbing, the taste of whiskey still on your tongue. "+
                     "The floor beneath you is sticky, "+
                     "and the air smells of dust and rain. "+
@@ -124,7 +134,19 @@ const storyData = {
 
         choices: [
             { text: "Read the journal", image: "spookytown.webp", next: "Read_the_journal" },
-            { text: "Search the room", image: "spookytown.webp", next: "Search the room" }
+            { text: "Search the room", image: "spookytown.webp", next: "Search_the_room" }
+        ]
+    },
+
+    Go_to_sherrifs_office_after_church: {
+        description: "The sheriff's office looks like it was ransacked. "+
+                    "The desk has an old journal on top of it that is open to a random page that reads:\n\n"+
+                    "It's here. The past, present, and future are intertwined, and the storm brings the truth. "+
+                    "The key to the curse is within the boards.",
+
+        choices: [
+            { text: "Read the journal", image: "spookytown.webp", next: "Read_the_journal_after_church" },
+            { text: "Search the room", image: "spookytown.webp", next: "Search_the_room_after_church" }
         ]
     },
 
@@ -157,6 +179,34 @@ const storyData = {
         ]
     },
 
+    Search_the_room_after_church: {
+        description: "You notice a floorboard that looks out of place. "+
+                    "You lift the loose floorboard to reveal an old key and a map of the old "+
+                    "graveyard at the edge of town with a circle drawn in the middle of the graveyard. ",
+
+        choices: [
+            { text: "Go to the well", image: "spookytown.webp", next: "Go_to_the_well" },
+            { text: "Go to the graveyard", image: "spookytown.webp", next: "Go_to_the_graveyard_after_church" }
+        ]
+    },
+
+    Read_the_journal_after_church: {
+        description: "\"The storm, the missing folk--it ain't normal. "+
+                    "It has to be tied to what they did; the spirits aren't done settling the debt. "+
+                    "It started with Old Jimmy Knox in 1888. He struck a deal with something wicked, "+
+                    "something that he shouldn't have. Hangman's Hollow used to be a struggling settlement, "+
+                    "with families pinching pennies to survive the month. "+
+                    "Jimmy got tired of worrying about his family and consulted a witch 2 settlements over "+
+                    "about a solution. He traded blood for riches. Every 10 years, "+
+                    "a sacrifice is required in order for Hangman's Hollow to survive. "+
+                    "Last night, there was no sacrifice....Now we all must suffer.\"",
+
+        choices: [
+            { text: "Search the room", image: "spookytown.webp", next: "Search_the_room_after_church" },
+            { text: "Go to the graveyard", image: "spookytown.webp", next: "Go_to_the_graveyard_after_church" }
+        ]
+    },
+
     Go_into_town: {
         description: "You start to wander into the foggy town, feeling eyes on you. "+
                     "A creak makes your head whip to look at the well that sits in the center of town square.",
@@ -175,17 +225,18 @@ const storyData = {
         "You lose.",
 
         choices: [
-            { text: "Try again?", image: "spookytown.webp", next: "start" }
+            { text: "Play again?", image: "spookytown.webp", next: "Start" }
         ]
     },
 
+    // Gain extra sentence at graveyard if you visit the church first
     Go_to_the_church: {
         description: "A shadowy figure stands in the middle of the aise. "+
                     "\'Answer and earn your fate. Leave and live another day.\'",
 
         choices: [
             { text: "Stay", image: "spookytown.webp", next: "Stay" },
-            { text: "Go to sheriff's office", image: "spookytown.webp", next: "Go_to_sherrifs_office" },
+            { text: "Go to sheriff's office", image: "spookytown.webp", next: "Go_to_sherrifs_office_after_church" },
             { text: "Leave", image: "spookytown.webp", next: "Leave" }
         ]
     },
@@ -196,7 +247,7 @@ const storyData = {
                     "\'Answer and earn your fate. Leave and live another day.\'",
 
         choices: [
-            { text: "Go to the graveyard", image: "spookytown.webp", next: "Go_to_the_graveyard" }
+            { text: "Go to the graveyard", image: "spookytown.webp", next: "Go_to_the_graveyard_after_church" }
         ]
     },
 
@@ -210,15 +261,25 @@ const storyData = {
                     "you mount the horse and ride out of Hangman's Hollow. ",
 
         choices: [
-            { text: "Try again?", image: "spookytown.webp", next: "start" }
+            { text: "Play again?", image: "spookytown.webp", next: "Start" }
+        ]
+    },
+
+    Go_to_the_graveyard_after_church: {
+        description: "You make your way through the foggy graveyard. "+
+                    "A large crypt stands in the center of the graveyard, covered in markings. "+
+                    "You remember that the figure in the church warned you about the markings. "+
+                    "The markings on the crypt glow. There are 3 ancient stone buttons: Clock, Skull, Scales.",
+
+        choices: [
+            { text: "Examine the crypt", image: "spookytown.webp", next: "Examine_the_crypt" }
         ]
     },
 
     Go_to_the_graveyard: {
         description: "You make your way through the foggy graveyard. "+
                     "A large crypt stands in the center of the graveyard, covered in markings. "+
-                    "You remember that the figure in the church warned you about the markings. "+
-                    "The markings on the crypt glow. There are 3 buttons: Clock, Skull, Scales.",
+                    "The markings on the crypt glow. There are 3 ancient stone buttons: Clock, Skull, Scales.",
 
         choices: [
             { text: "Examine the crypt", image: "spookytown.webp", next: "Examine_the_crypt" }
@@ -227,19 +288,168 @@ const storyData = {
 
     Examine_the_crypt: {
         description: "Below, a script reads: "+
-                    "\"The past and present must be balanced before the future can rest\"\n"+
-                    "(Correct order: Clock, Scales, Skull)\n"+
-                    "The ground trembles and the door to the crypt opens. "+
-                    "The fog starts to lift and the sky returns to its normal light blue color. \n\n"+
+                    "\"The past and present must be balanced before the future can rest",
 
-                    "You have broken the curse on Hangman's Hollow..The victim's "+
-                    "spirits were freed when the crypt was opened. \n\n"+
-
-                    "They are finally able to rest.",
         choices: [
-            { text: "Thanks for playing!", image: "spookytown.webp", next: "start" }
+            { text: "🕒", image: "spookytown.webp", next: "Examine_the_crypt_clock" },
+            { text: "⚖️", image: "spookytown.webp", next: "Examine_the_crypt_scales" },
+            { text: "💀", image: "spookytown.webp", next: "Examine_the_crypt_skull" }
         ]
     },
+
+    Examine_the_crypt_clock: {
+        description: "Below, a script reads: "+
+                    "\"The past and present must be balanced before the future can rest",
+
+        choices: [
+            { text: "⚖️", image: "spookytown.webp", next: "Examine_the_crypt_clock_scales" },
+            { text: "💀", image: "spookytown.webp", next: "Examine_the_crypt_clock_skull" }
+        ]
+    },
+
+    Examine_the_crypt_scales: {
+        description: "Below, a script reads: " +
+                    "\"The past and present must be balanced before the future can rest",
+
+        choices: [
+            { text: "🕒", image: "spookytown.webp", next: "Examine_the_crypt_scales_clock" },
+            { text: "💀", image: "spookytown.webp", next: "Examine_the_crypt_scales_skull" }
+        ]
+    },
+
+    Examine_the_crypt_skull: {
+        description: "Below, a script reads: " +
+                    "\"The past and present must be balanced before the future can rest",
+
+        choices: [
+            { text: "🕒", image: "spookytown.webp", next: "Examine_the_crypt_skull_clock" },
+            { text: "⚖️", image: "spookytown.webp", next: "Examine_the_crypt_skull_scales" },
+        ]
+    },
+
+    Examine_the_crypt_clock_scales: {
+        description: "Below, a script reads: "+
+                    "\"The past and present must be balanced before the future can rest",
+
+        choices: [
+            { text: "💀", image: "spookytown.webp", next: "Examine_the_crypt_clock_scales_skull" },
+        ]
+    },
+
+    Examine_the_crypt_clock_skull: {
+        description: "Below, a script reads: " +
+                    "\"The past and present must be balanced before the future can rest",
+
+        choices: [
+            { text: "⚖️", image: "spookytown.webp", next: "Examine_the_crypt_clock_skull_scales" },
+        ]
+    },
+    
+    Examine_the_crypt_scales_clock: {
+        description: "Below, a script reads: " +
+                    "\"The past and present must be balanced before the future can rest",
+
+        choices: [
+            { text: "💀", image: "spookytown.webp", next: "Examine_the_crypt_scales_clock_skull" }
+        ]
+    },
+
+    Examine_the_crypt_scales_skull: {
+        description: "Below, a script reads: " +
+                    "\"The past and present must be balanced before the future can rest",
+
+        choices: [
+            { text: "🕒", image: "spookytown.webp", next: "Examine_the_crypt_scales_skull_clock" }
+        ]
+    },
+
+    Examine_the_crypt_skull_clock: {
+        description: "Below, a script reads: " +
+                    "\"The past and present must be balanced before the future can rest",
+
+        choices: [
+            { text: "⚖️", image: "spookytown.webp", next: "Examine_the_crypt_skull_clock_scales" }
+        ]
+    },
+
+    Examine_the_crypt_skull_scales: {
+        description: "Below, a script reads: " +
+                    "\"The past and present must be balanced before the future can rest",
+
+        choices: [
+            { text: "🕒", image: "spookytown.webp", next: "Examine_the_crypt_skull_scales_clock" }
+        ]
+    },
+
+    //correct full combination
+    Examine_the_crypt_clock_scales_skull: {
+        description: "The ground trembles and the door to the crypt opens. The fog starts to lift and the sky returns to its normal light blue color. \n\n"+
+
+                    "You have broken the curse on Hangman's Hollow..The victim's spirits were freed when the crypt was opened. \n\n"+
+
+                    "They are finally able to rest.",
+
+        choices: [
+            { text: "Play again?", image: "spookytown.webp", next: "Start" },
+        ]
+    },
+
+    // Wrong full combinations:
+    Examine_the_crypt_clock_skull_scales: {
+        description: "The crypt groans as the buttons scrape against the stone as they push themselves back out.\n\n" +
+                     "This must've been the wrong order.",
+
+        choices: [
+            { text: "🕒", image: "spookytown.webp", next: "Examine_the_crypt_clock" },
+            { text: "⚖️", image: "spookytown.webp", next: "Examine_the_crypt_scales" },
+            { text: "💀", image: "spookytown.webp", next: "Examine_the_crypt_skull" }
+        ]
+    },
+
+    Examine_the_crypt_scales_clock_skull: {
+        description: "The crypt groans as the buttons scrape against the stone as they push themselves back out.\n\n" +
+                     "This must've been the wrong order.",
+
+        choices: [
+            { text: "🕒", image: "spookytown.webp", next: "Examine_the_crypt_clock" },
+            { text: "⚖️", image: "spookytown.webp", next: "Examine_the_crypt_scales" },
+            { text: "💀", image: "spookytown.webp", next: "Examine_the_crypt_skull" }
+        ]
+    },
+
+    Examine_the_crypt_scales_skull_clock: {
+        description: "The crypt groans as the buttons scrape against the stone as they push themselves back out.\n\n" +
+                     "This must've been the wrong order.",
+
+        choices: [
+            { text: "🕒", image: "spookytown.webp", next: "Examine_the_crypt_clock" },
+            { text: "⚖️", image: "spookytown.webp", next: "Examine_the_crypt_scales" },
+            { text: "💀", image: "spookytown.webp", next: "Examine_the_crypt_skull" }
+        ]
+    },
+
+    Examine_the_crypt_skull_clock_scales: {
+        description: "The crypt groans as the buttons scrape against the stone as they push themselves back out.\n\n" +
+                     "This must've been the wrong order. \n\n",
+
+        choices: [
+            { text: "🕒", image: "spookytown.webp", next: "Examine_the_crypt_clock" },
+            { text: "⚖️", image: "spookytown.webp", next: "Examine_the_crypt_scales" },
+            { text: "💀", image: "spookytown.webp", next: "Examine_the_crypt_skull" }
+        ]
+    },
+
+    Examine_the_crypt_skull_scales_clock: {
+        description: "The crypt groans as the buttons scrape against the stone as they push themselves back out.\n\n" +
+                     "This must've been the wrong order.",
+
+        choices: [
+            { text: "🕒", image: "spookytown.webp", next: "Examine_the_crypt_clock" },
+            { text: "⚖️", image: "spookytown.webp", next: "Examine_the_crypt_scales" },
+            { text: "💀", image: "spookytown.webp", next: "Examine_the_crypt_skull" }
+        ]
+    }
+
 
 };
 
@@ -269,14 +479,24 @@ function updateScene(sceneKey) {
             document.getElementById("illustrationImage").src = choice.image;
             updateScene(choice.next);
         };
-
+        
         optionButtonContainer.appendChild(button);
     });
 }
 
-// Function to start the game
+// Function to begin the game
 function startGame() {
-    updateScene("start");
+    updateScene("Begin");
+}
+
+// Function to restart the game
+function restartGame() {
+    updateScene("Start");
+}
+
+//Function go return to title screen
+function goHome(){
+    window.location.href = "index.html";
 }
 
 // Fullscreen toggle function
@@ -304,3 +524,4 @@ function fullscreenToggle() {
         buttonImage.src = "fullscreen_icon.png";
     }
 }
+
