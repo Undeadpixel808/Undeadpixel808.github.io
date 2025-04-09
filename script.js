@@ -6,10 +6,7 @@
 - MAKE CHURCH PUZZLE
 - MAKE CRYPT PUZZLE
 - MAKE ENDING SCREEN?
-- MAKE HOME BUTTON?
 */
-
-
 // Story structure as an object
 const storyData = {
 
@@ -163,15 +160,9 @@ const storyData = {
     },
 
     Read_the_journal: {
-        description: "\"The storm, the missing folk--it ain't normal. "+
-                    "It has to be tied to what they did; the spirits aren't done settling the debt. "+
-                    "It started with Old Jimmy Knox in 1888. He struck a deal with something wicked, "+
-                    "something that he shouldn't have. Hangman's Hollow used to be a struggling settlement, "+
-                    "with families pinching pennies to survive the month. "+
-                    "Jimmy got tired of worrying about his family and consulted a witch 2 settlements over "+
-                    "about a solution. He traded blood for riches. Every 10 years, "+
-                    "a sacrifice is required in order for Hangman's Hollow to survive. "+
-                    "Last night, there was no sacrifice....Now we all must suffer.\"",
+        description: "the storm and the missing folk trace back to a dark deal made in 1888. "+
+                    "A sacrifice has been made every 10 years to keep Hangman’s Hollow "+
+                    "alive—until last night. Now, we all must pay.",
 
         choices: [
             { text: "Search the room", image: "spookytown.webp", next: "Search the room" },
@@ -383,7 +374,8 @@ const storyData = {
 
     //correct full combination
     Examine_the_crypt_clock_scales_skull: {
-        description: "The ground trembles and the door to the crypt opens. The fog starts to lift and the sky returns to its normal light blue color. \n\n"+
+        description: "The ground trembles and the door to the crypt opens. "+
+                    "The fog starts to lift and the sky returns to its normal light blue color. \n"+
 
                     "You have broken the curse on Hangman's Hollow..The victim's spirits were freed when the crypt was opened. \n\n"+
 
@@ -449,11 +441,7 @@ const storyData = {
             { text: "💀", image: "spookytown.webp", next: "Examine_the_crypt_skull" }
         ]
     }
-
-
 };
-
-
 
 // Recursive function to update the story scene
 function updateScene(sceneKey) {
