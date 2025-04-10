@@ -2,22 +2,18 @@
             NOTES
 
 - MAKE ILLUSTRATIONS
-- MAKE SAFE PUZZLE
-- MAKE CHURCH PUZZLE
-- MAKE CRYPT PUZZLE
 - MAKE ENDING SCREEN?
-- MAKE HOME BUTTON?
 */
 
 /* General Styling */
 body {
     z-index: 1;
     text-align: center;
-    -webkit-text-stroke: 10% violet;
     background-color: black;
     color: whitesmoke;
-    font-size: 16px;
+    font-size: 18px;
     font-family: 'Courier New', monospace;
+    /* Dark border around text for ease of reading in case of clipping in front of illustration */
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     margin: 0;
     line-height: 1.3;
@@ -27,7 +23,7 @@ body {
 .illustrationBox{
     z-index: -1;
     /* Change this value to adjust the stamp perforation size: */
-    --radius: 16px;
+    --radius: 1vw;
   
     background-image: 
       radial-gradient(
@@ -47,7 +43,11 @@ body {
       calc(100% - var(--radius) * 3) calc(100% - var(--radius) * 3);
 
     width: 60vw;
+    max-width: 60vw;
+    min-width: none;
     height: 33.75vw;
+    max-height: 60vh;
+    min-height: 33.75vw;
     position: absolute;
     inset: 0;
     bottom: 30%;
@@ -105,7 +105,6 @@ a:hover {
 
 /* Dynamic button container */
 .optionButtonContainer {
-    z-index: -1;
     position: absolute;
     display: flex;
     flex-direction: row;
@@ -119,7 +118,7 @@ a:hover {
     background-color: black;
     color: white;
     font-family: 'Courier New', monospace;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
     padding: 10px 20px;
     border: 2px solid white;
@@ -171,7 +170,6 @@ a:hover {
 /* Indicate that button is clickable with change in brightness */
 .fullscreenButton:hover {
     filter: opacity(0.5);
-
 }
 
 .refreshButton:hover {

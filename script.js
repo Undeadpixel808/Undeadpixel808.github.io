@@ -2,11 +2,9 @@
             NOTES
 
 - MAKE ILLUSTRATIONS
-- MAKE SAFE PUZZLE
-- MAKE CHURCH PUZZLE
-- MAKE CRYPT PUZZLE
 - MAKE ENDING SCREEN?
 */
+
 // Story structure as an object
 const storyData = {
 
@@ -57,15 +55,67 @@ const storyData = {
     Open_the_safe: {
         description: "The safe is small and rusty. There is a keypad and a note on top that "+ 
                     "states:\n "+
-                    "\"I am a four-digit code. My digits add up to 10, but no single digit is larger than 5, and no number is repeated. What am I?\"\n"+
-                    "(Answer: 1234)"+
-                    "The safe opens to reveal an old key. This must be the key to the tavern!",
+                    "\"I am a four-digit code. My digits add up to 10, but no single digit is larger than 5, and no number is repeated. What am I?\"\n",
 
         choices: [
-            { text: "Unlock tavern door", image: "spookytown.webp", next: "Unlock_tavern_door" }
+            { text: "9999", image: "spookytown.webp", next: "Wrong_code_9999" },
+            { text: "1984", image: "spookytown.webp", next: "Wrong_code_1984" },
+            { text: "1234", image: "spookytown.webp", next: "Unlock_safe" },
+            { text: "Kick the safe", image: "spookytown.webp", next: "Kick_the_safe_door" }
         ]
     },
 
+    Wrong_code_9999: {
+        description: "You try the door after entering 9999, but it doesn't budge. \n\n"+
+                    "This must be the wrong code.",
+
+        choices: [
+            { text: "1984", image: "spookytown.webp", next: "Wrong_code_twice" },
+            { text: "1234", image: "spookytown.webp", next: "Unlock_safe" },
+            { text: "Kick the safe", image: "spookytown.webp", next: "Kick_the_safe_door" }
+        ]
+    },
+
+    Wrong_code_1984: {
+        description: "You try the door after entering 1984, but it doesn't budge. \n\n"+
+                    "This must be the wrong code.",
+
+        choices: [
+            { text: "9999", image: "spookytown.webp", next: "Wrong_code_twice" },
+            { text: "1234", image: "spookytown.webp", next: "Unlock_safe" },
+            { text: "Kick the safe", image: "spookytown.webp", next: "Kick_the_safe_door" }
+        ]
+    },
+
+    Wrong_code_twice: {
+        description: "You try the door after entering 1984 , but it doesn't budge. \n\n"+
+                    "This must be the wrong code.",
+
+        choices: [
+            { text: "1234", image: "spookytown.webp", next: "Unlock_safe" },
+            { text: "Kick the safe", image: "spookytown.webp", next: "Kick_the_safe_door" }
+        ]
+    },
+
+    Unlock_safe: {
+        description: "The safe opens to reveal an old key. \n\n"+
+                    "This must be the key to the tavern!",
+
+        choices: [
+            { text: "Unlock tavern door", image: "spookytown.webp", next: "Unlock_tavern_door" },
+        ]
+    },
+
+    Kick_the_safe: {
+        description: "The rusty hinges fail as the door flies open, the safe reveals an old key .\n\n"+
+                    "This must be the key to the tavern!",
+
+        choices: [
+            { text: "Unlock tavern door", image: "spookytown.webp", next: "Unlock_tavern_door" },
+        ]
+    },
+
+    
     Open_the_envelope: {
         description: "You pick up the envelope.\n\n"+ 
 
@@ -103,11 +153,10 @@ const storyData = {
     Open_the_safe_drunk: {
         description: "tehre is a noet. \n\n"+
 
-                    "\"tidgis add to 10, onne laregr htan 5, nnoe rpeaetde. hwat ma I?\"\n"+
-                    "(Answer: 1234),",
+                    "\"tidgis add to 10, onne laregr htan 5, nnoe rpeaetde. hwat ma I?\"\n",
 
         choices: [
-            { text: "Unlock tavern door", image: "spookytown.webp", next: "Unlock_tavern_door" }
+            { text: "Kick the safe", image: "spookytown.webp", next: "Kick_the_safe" }
         ]
     },
     
@@ -123,6 +172,28 @@ const storyData = {
         ]
     },
 
+    Go_into_town: {
+        description: "You start to wander into the foggy town, feeling eyes on you. "+
+                    "A creak makes your head whip to look at the well that sits in the center of town square.",
+
+        choices: [
+            { text: "Go to the well", image: "spookytown.webp", next: "Go_to_the_well" },
+            { text: "Go to the church", image: "spookytown.webp", next: "Go_to_the_church" }
+        ]
+    },
+
+    Go_to_the_well: {
+        description: "Something draws you to the well. As if in a trance, "+
+                    "you allow yourself to touch the water when a hand comes out and grabs you, "+
+                    "dragging you below the surface.\n\n"+
+
+        "You lose.",
+
+        choices: [
+            { text: "Play again?", image: "spookytown.webp", next: "Start" }
+        ]
+    },
+
     Go_to_sherrifs_office: {
         description: "The sheriff's office looks like it was ransacked. "+
                     "The desk has an old journal on top of it that is open to a random page that reads:\n\n"+
@@ -135,17 +206,77 @@ const storyData = {
         ]
     },
 
-    Go_to_sherrifs_office_after_church: {
-        description: "The sheriff's office looks like it was ransacked. "+
-                    "The desk has an old journal on top of it that is open to a random page that reads:\n\n"+
-                    "It's here. The past, present, and future are intertwined, and the storm brings the truth. "+
-                    "The key to the curse is within the boards.",
+    // Gain extra sentence at graveyard if you visit the church first
+    Go_to_the_church: {
+        description: "A shadowy figure stands in the middle of the aisle. "+
+                    "\'Answer and earn your fate. Leave and live another day.\'",
 
         choices: [
-            { text: "Read the journal", image: "spookytown.webp", next: "Read_the_journal_after_church" },
-            { text: "Search the room", image: "spookytown.webp", next: "Search_the_room_after_church" }
+            { text: "Stay", image: "spookytown.webp", next: "Stay" },
+            { text: "Go to sheriff's office", image: "spookytown.webp", next: "Go_to_sherrifs_office_after_church" },
+            { text: "Leave", image: "spookytown.webp", next: "Leave" }
         ]
     },
+
+    Stay: {
+        description: "What is always on its way but never arrives?"+
+                    "\'Answer and earn your fate. Leave and live another day.\'",
+
+        choices: [
+            { text: "Happiness", image: "spookytown.webp", next: "Happiness" },
+            { text: "Tomorrow", image: "spookytown.webp", next: "Go_to_the_graveyard_after_church" },
+            { text: "Death", image: "spookytown.webp", next: "Death" }
+        ]
+    },
+
+    Death: {
+        description: "\"I wouldn't be so sure\" the figure remarks. ",
+
+        choices: [
+            { text: "Happiness", image: "spookytown.webp", next: "Happiness_death" },
+            { text: "Tomorrow", image: "spookytown.webp", next: "Go_to_the_graveyard_after_church" },
+        ]
+    },
+
+    Happiness: {
+        description: "The figure laughs dryly, saying nothing.",
+
+        choices: [
+            { text: "Tomorrow", image: "spookytown.webp", next: "Go_to_the_graveyard_after_church" },
+            { text: "Death", image: "spookytown.webp", next: "Death_happiness" }
+        ]
+    },
+
+    Death_happiness: {
+        description: "\"I wouldn't be so sure\" the figure remarks. ",
+
+        choices: [
+            { text: "Tomorrow", image: "spookytown.webp", next: "Go_to_the_graveyard_after_church" },
+        ]
+    },
+
+    Happiness_death: {
+        description: "The figure laughs dryly, saying nothing.",
+
+        choices: [
+            { text: "Tomorrow", image: "spookytown.webp", next: "Go_to_the_graveyard_after_church" },
+        ]
+    },
+
+
+    Leave: {
+        description: "You turn around and start to find your way to the edge of town. "+
+                    "You're a cowboy; not a priest, and surely not a ghost hunter.\n\n"+
+
+                    "Whatever happened here ain't your problem.\n\n"+
+
+                    "You whistle loudly, a horse running up beside you, "+
+                    "you mount the horse and ride out of Hangman's Hollow. ",
+
+        choices: [
+            { text: "Play again?", image: "spookytown.webp", next: "Start" }
+        ]
+    },    
 
     Search_the_room: {
         description: "You notice a floorboard that looks out of place. "+
@@ -167,6 +298,18 @@ const storyData = {
         choices: [
             { text: "Search the room", image: "spookytown.webp", next: "Search the room" },
             { text: "Go to the graveyard", image: "spookytown.webp", next: "Go_to_the_graveyard" }
+        ]
+    },
+
+    Go_to_sherrifs_office_after_church: {
+        description: "The sheriff's office looks like it was ransacked. "+
+                    "The desk has an old journal on top of it that is open to a random page that reads:\n\n"+
+                    "It's here. The past, present, and future are intertwined, and the storm brings the truth. "+
+                    "The key to the curse is within the boards.",
+
+        choices: [
+            { text: "Read the journal", image: "spookytown.webp", next: "Read_the_journal_after_church" },
+            { text: "Search the room", image: "spookytown.webp", next: "Search_the_room_after_church" }
         ]
     },
 
@@ -198,67 +341,9 @@ const storyData = {
         ]
     },
 
-    Go_into_town: {
-        description: "You start to wander into the foggy town, feeling eyes on you. "+
-                    "A creak makes your head whip to look at the well that sits in the center of town square.",
-
-        choices: [
-            { text: "Go to the well", image: "spookytown.webp", next: "Go_to_the_well" },
-            { text: "Go to the church", image: "spookytown.webp", next: "Go_to_the_church" }
-        ]
-    },
-
-    Go_to_the_well: {
-        description: "Something draws you to the well. As if in a trance, "+
-                    "you allow yourself to touch the water when a hand comes out and grabs you, "+
-                    "dragging you below the surface.\n\n"+
-
-        "You lose.",
-
-        choices: [
-            { text: "Play again?", image: "spookytown.webp", next: "Start" }
-        ]
-    },
-
-    // Gain extra sentence at graveyard if you visit the church first
-    Go_to_the_church: {
-        description: "A shadowy figure stands in the middle of the aise. "+
-                    "\'Answer and earn your fate. Leave and live another day.\'",
-
-        choices: [
-            { text: "Stay", image: "spookytown.webp", next: "Stay" },
-            { text: "Go to sheriff's office", image: "spookytown.webp", next: "Go_to_sherrifs_office_after_church" },
-            { text: "Leave", image: "spookytown.webp", next: "Leave" }
-        ]
-    },
-
-    Stay: {
-        description: "What is always on its way but never arrives?"+
-                    "(Answer: tomorrow)"+
-                    "\'Answer and earn your fate. Leave and live another day.\'",
-
-        choices: [
-            { text: "Go to the graveyard", image: "spookytown.webp", next: "Go_to_the_graveyard_after_church" }
-        ]
-    },
-
-    Leave: {
-        description: "You turn around and start to find your way to the edge of town. "+
-                    "You're a cowboy; not a priest, and surely not a ghost hunter.\n\n"+
-
-                    "Whatever happened here ain't your problem.\n\n"+
-
-                    "You whistle loudly, a horse running up beside you, "+
-                    "you mount the horse and ride out of Hangman's Hollow. ",
-
-        choices: [
-            { text: "Play again?", image: "spookytown.webp", next: "Start" }
-        ]
-    },
-
     Go_to_the_graveyard_after_church: {
-        description: "You make your way through the foggy graveyard. "+
-                    "A large crypt stands in the center of the graveyard, covered in markings. "+
+        description: "A blinding flash illuminates the church, the world around you fades away, you're in the center of a graveyard.\n"+
+                    "A large crypt stands before you, covered in markings. "+
                     "You remember that the figure in the church warned you about the markings. "+
                     "The markings on the crypt glow. There are 3 ancient stone buttons: Clock, Skull, Scales.",
 
