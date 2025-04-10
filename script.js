@@ -46,13 +46,13 @@ const storyData = {
                     " Next to the crack sits an envelope, a bottle of whiskey, and a safe.",
 
         choices: [
-            { text: "Open the safe", image: "spookytown.webp", next: "Open_the_safe" },
+            { text: "Try the safe", image: "spookytown.webp", next: "Try_the_safe" },
             { text: "Open the envelope", image: "spookytown.webp", next: "Open_the_envelope" },
             { text: "Drink the whiskey", image: "spookytown.webp", next: "Drink_the_whiskey" }
         ]
     },
 
-    Open_the_safe: {
+    Try_the_safe: {
         description: "The safe is small and rusty. There is a keypad and a note on top that "+ 
                     "states:\n "+
                     "\"I am a four-digit code. My digits add up to 10, but no single digit is larger than 5, and no number is repeated. What am I?\"\n",
@@ -61,7 +61,7 @@ const storyData = {
             { text: "9999", image: "spookytown.webp", next: "Wrong_code_9999" },
             { text: "1984", image: "spookytown.webp", next: "Wrong_code_1984" },
             { text: "1234", image: "spookytown.webp", next: "Unlock_safe" },
-            { text: "Kick the safe", image: "spookytown.webp", next: "Kick_the_safe_door" }
+            { text: "Kick the safe", image: "spookytown.webp", next: "Kick_the_safe" }
         ]
     },
 
@@ -72,7 +72,7 @@ const storyData = {
         choices: [
             { text: "1984", image: "spookytown.webp", next: "Wrong_code_twice" },
             { text: "1234", image: "spookytown.webp", next: "Unlock_safe" },
-            { text: "Kick the safe", image: "spookytown.webp", next: "Kick_the_safe_door" }
+            { text: "Kick the safe", image: "spookytown.webp", next: "Kick_the_safe" }
         ]
     },
 
@@ -83,17 +83,17 @@ const storyData = {
         choices: [
             { text: "9999", image: "spookytown.webp", next: "Wrong_code_twice" },
             { text: "1234", image: "spookytown.webp", next: "Unlock_safe" },
-            { text: "Kick the safe", image: "spookytown.webp", next: "Kick_the_safe_door" }
+            { text: "Kick the safe", image: "spookytown.webp", next: "Kick_the_safe" }
         ]
     },
 
     Wrong_code_twice: {
-        description: "You try the door after entering 1984 , but it doesn't budge. \n\n"+
+        description: "You try the door after entering 1984, but it doesn't budge. \n\n"+
                     "This must be the wrong code.",
 
         choices: [
             { text: "1234", image: "spookytown.webp", next: "Unlock_safe" },
-            { text: "Kick the safe", image: "spookytown.webp", next: "Kick_the_safe_door" }
+            { text: "Kick the safe", image: "spookytown.webp", next: "Kick_the_safe" }
         ]
     },
 
@@ -115,7 +115,6 @@ const storyData = {
         ]
     },
 
-    
     Open_the_envelope: {
         description: "You pick up the envelope.\n\n"+ 
 
@@ -124,7 +123,7 @@ const storyData = {
                     "A riddle is scribbled below:\n"+
                     "\'The more you take, the more you leave behind. What am I?\'",
         choices: [
-            { text: "Open the safe", image: "spookytown.webp", next: "Open_the_safe" }
+            { text: "Try the safe", image: "spookytown.webp", next: "Try_the_safe" }
         ]
     },
 
@@ -146,11 +145,11 @@ const storyData = {
                     "\"Teh erom you ekat, teh erom you eavl behind. tWh a mI?\"",
 
         choices: [
-            { text: "Open the safe", image: "spookytown.webp", next: "Open_the_safe_drunk" }
+            { text: "Try the safe", image: "spookytown.webp", next: "Try_the_safe_drunk" }
         ]
     },
 
-    Open_the_safe_drunk: {
+    Try_the_safe_drunk: {
         description: "tehre is a noet. \n\n"+
 
                     "\"tidgis add to 10, onne laregr htan 5, nnoe rpeaetde. hwat ma I?\"\n",
@@ -219,8 +218,7 @@ const storyData = {
     },
 
     Stay: {
-        description: "What is always on its way but never arrives?"+
-                    "\'Answer and earn your fate. Leave and live another day.\'",
+        description: "What is always on its way but never arrives?",
 
         choices: [
             { text: "Happiness", image: "spookytown.webp", next: "Happiness" },
@@ -230,7 +228,7 @@ const storyData = {
     },
 
     Death: {
-        description: "\"I wouldn't be so sure\" the figure remarks. ",
+        description: "\'I wouldn't be so sure\' the figure remarks. ",
 
         choices: [
             { text: "Happiness", image: "spookytown.webp", next: "Happiness_death" },
@@ -248,7 +246,7 @@ const storyData = {
     },
 
     Death_happiness: {
-        description: "\"I wouldn't be so sure\" the figure remarks. ",
+        description: "\'I wouldn't be so sure\' the figure remarks. ",
 
         choices: [
             { text: "Tomorrow", image: "spookytown.webp", next: "Go_to_the_graveyard_after_church" },
@@ -597,4 +595,3 @@ function fullscreenToggle() {
         buttonImage.src = "fullscreen_icon.png";
     }
 }
-
