@@ -291,7 +291,7 @@ const storyData = {
                     "graveyard at the edge of town with a circle drawn in the middle of the graveyard. ",
 
         choices: [
-            { text: "Go into town", image: "church.jpg", next: "Go_into_town_after_sherrifs_office" },
+            { text: "Go into town", image: "town.jpg", next: "Go_into_town_after_sherrifs_office" },
             { text: "Go to the graveyard", image: "crypt.jpg", next: "Go_to_the_graveyard" }
         ]
     },
@@ -313,6 +313,7 @@ const storyData = {
 
         choices: [
             { text: "Search the room", image: "sherrif's office.jpg", next: "Search_the_room" },
+            { text: "Go into town", image: "town.jpg", next: "Go_into_town_after_sherrifs_office" },
             { text: "Go to the graveyard", image: "crypt.jpg", next: "Go_to_the_graveyard" }
         ]
     },
@@ -335,21 +336,14 @@ const storyData = {
                     "graveyard at the edge of town with a circle drawn in the middle of the graveyard. ",
 
         choices: [
-            { text: "Go to the well", image: "sherrif's office.jpg", next: "Go_to_the_well" },
             { text: "Go to the graveyard", image: "crypt.jpg", next: "Go_to_the_graveyard_after_church" }
         ]
     },
 
     Read_the_journal_after_church: {
-        description: "\"The storm, the missing folk--it ain't normal. "+
-                    "It has to be tied to what they did; the spirits aren't done settling the debt. "+
-                    "It started with Old Jimmy Knox in 1888. He struck a deal with something wicked, "+
-                    "something that he shouldn't have. Hangman's Hollow used to be a struggling settlement, "+
-                    "with families pinching pennies to survive the month. "+
-                    "Jimmy got tired of worrying about his family and consulted a witch 2 settlements over "+
-                    "about a solution. He traded blood for riches. Every 10 years, "+
-                    "a sacrifice is required in order for Hangman's Hollow to survive. "+
-                    "Last night, there was no sacrifice....Now we all must suffer.\"",
+        description: "the storm and the missing folk trace back to a dark deal made in 1888. "+
+                    "A sacrifice has been made every 10 years to keep Hangman’s Hollow "+
+                    "alive—until last night. Now, we all must pay.",
 
         choices: [
             { text: "Search the room", image: "sherrif's office.jpg", next: "Search_the_room_after_church" },
