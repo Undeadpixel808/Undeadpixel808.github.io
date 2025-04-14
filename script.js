@@ -100,7 +100,7 @@ const storyData = {
                     "This must be the key to the tavern!",
 
         choices: [
-            { text: "Unlock tavern door", image: "Exit the tavern.jpg", next: "Unlock_tavern_door" },
+            { text: "Unlock tavern door", image: "exit the tavern.jpg", next: "Unlock_tavern_door" },
         ]
     },
 
@@ -109,7 +109,7 @@ const storyData = {
                     "This must be the key to the tavern!",
 
         choices: [
-            { text: "Unlock tavern door", image: "Exit the tavern.jpg", next: "Unlock_tavern_door" },
+            { text: "Unlock tavern door", image: "exit the tavern.jpg", next: "Unlock_tavern_door" },
         ]
     },
 
@@ -160,13 +160,13 @@ const storyData = {
     Unlock_tavern_door: {
         description: "The cold foggy air hits you in the face. The town is eerily quiet. "+
                     "The fog is so thick that you can't see more than a few feet ahead of you. "+
-                    "There is a sign saying \"Town Square\" pointing in one direction and \"Sherrif's office\" point in another. " +
+                    "There is a sign saying \"Town Square\" pointing in one direction and \"sherrif's office\" point in another. " +
                     "There are a set of footsteps on the "+
-                    "ground leading towards the Sherrif's office.",
+                    "ground leading towards the sherrif's office.",
 
         choices: [
-            { text: "Go to sheriff's office", image: "Sherrif's office.jpg", next: "Go_to_sherrifs_office" },
-            { text: "Go into town", image: "in town.jpg", next: "Go_into_town" }
+            { text: "Go to sheriff's office", image: "sherrif's office.jpg", next: "Go_to_sherrifs_office" },
+            { text: "Go into town", image: "town.jpg", next: "Go_into_town" }
         ]
     },
 
@@ -199,8 +199,8 @@ const storyData = {
                     "The key to the curse is within the boards.",
 
         choices: [
-            { text: "Read the journal", image: "Sherrif's office.jpg", next: "Read_the_journal" },
-            { text: "Search the room", image: "Sherrif's office.jpg", next: "Search_the_room" }
+            { text: "Read the journal", image: "sherrif's office.jpg", next: "Read_the_journal" },
+            { text: "Search the room", image: "sherrif's office.jpg", next: "Search_the_room" }
         ]
     },
 
@@ -211,7 +211,17 @@ const storyData = {
 
         choices: [
             { text: "Stay", image: "church.jpg", next: "Stay" },
-            { text: "Go to sheriff's office", image: "Sherrif's office.jpg", next: "Go_to_sherrifs_office_after_church" },
+            { text: "Leave", image: "Leave.jpg", next: "Leave" },
+            { text: "Go to sheriff's office", image: "sherrif's office.jpg", next: "Go_to_sherrifs_office_after_church" },
+        ]
+    },
+
+    Go_to_the_church_after_sherrifs_office: {
+        description: "A shadowy figure stands in the middle of the aisle. "+
+                    "\'Answer and earn your fate. Leave and live another day.\'",
+
+        choices: [
+            { text: "Stay", image: "church.jpg", next: "Stay" },
             { text: "Leave", image: "Leave.jpg", next: "Leave" }
         ]
     },
@@ -281,9 +291,18 @@ const storyData = {
                     "graveyard at the edge of town with a circle drawn in the middle of the graveyard. ",
 
         choices: [
-            { text: "Go to the church", image: "church.jpg", next: "Go_to_the_church" },
-            { text: "Go to the well", image: "well.jpg", next: "Go_to_the_well" },
+            { text: "Go into town", image: "church.jpg", next: "Go_into_town_after_sherrifs_office" },
             { text: "Go to the graveyard", image: "crypt.jpg", next: "Go_to_the_graveyard" }
+        ]
+    },
+
+    Go_into_town_after_sherrifs_office: {
+        description: "You start to wander into the foggy town, feeling eyes on you. "+
+                    "A creak makes your head whip to look at the well that sits in the center of town square.",
+
+        choices: [
+            { text: "Go to the well", image: "well.jpg", next: "Go_to_the_well" },
+            { text: "Go to the church", image: "church.jpg", next: "Go_to_the_church_after_sherrifs_office" }
         ]
     },
 
@@ -293,7 +312,7 @@ const storyData = {
                     "alive—until last night. Now, we all must pay.",
 
         choices: [
-            { text: "Search the room", image: "Sherrif's office.jpg", next: "Search_the_room" },
+            { text: "Search the room", image: "sherrif's office.jpg", next: "Search_the_room" },
             { text: "Go to the graveyard", image: "crypt.jpg", next: "Go_to_the_graveyard" }
         ]
     },
@@ -305,8 +324,8 @@ const storyData = {
                     "The key to the curse is within the boards.",
 
         choices: [
-            { text: "Read the journal", image: "Sherrif's office.jpg", next: "Read_the_journal_after_church" },
-            { text: "Search the room", image: "Sherrif's office.jpg", next: "Search_the_room_after_church" }
+            { text: "Read the journal", image: "sherrif's office.jpg", next: "Read_the_journal_after_church" },
+            { text: "Search the room", image: "sherrif's office.jpg", next: "Search_the_room_after_church" }
         ]
     },
 
@@ -316,7 +335,7 @@ const storyData = {
                     "graveyard at the edge of town with a circle drawn in the middle of the graveyard. ",
 
         choices: [
-            { text: "Go to the well", image: "Sherrif's office.jpg", next: "Go_to_the_well" },
+            { text: "Go to the well", image: "sherrif's office.jpg", next: "Go_to_the_well" },
             { text: "Go to the graveyard", image: "crypt.jpg", next: "Go_to_the_graveyard_after_church" }
         ]
     },
@@ -333,7 +352,7 @@ const storyData = {
                     "Last night, there was no sacrifice....Now we all must suffer.\"",
 
         choices: [
-            { text: "Search the room", image: "Sherrif's office.jpg", next: "Search_the_room_after_church" },
+            { text: "Search the room", image: "sherrif's office.jpg", next: "Search_the_room_after_church" },
             { text: "Go to the graveyard", image: "crypt.jpg", next: "Go_to_the_graveyard_after_church" }
         ]
     },
@@ -405,7 +424,7 @@ const storyData = {
                     "\"The past and present must be balanced before the future can rest",
 
         choices: [
-            { text: "💀", image: "crypt.jpg", next: "Examine_the_crypt_clock_scales_skull" },
+            { text: "💀", image: "good ending.jpg", next: "Examine_the_crypt_clock_scales_skull" },
         ]
     },
 
@@ -464,7 +483,7 @@ const storyData = {
                     "They are finally able to rest.",
 
         choices: [
-            { text: "Play again?", image: "good ending.jpg", next: "Start" },
+            { text: "Play again?", image: "tavern.jpg", next: "Start" },
         ]
     },
 
