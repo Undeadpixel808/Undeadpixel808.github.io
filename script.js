@@ -1,25 +1,23 @@
 /* 
             NOTES
-
-- MAKE ILLUSTRATIONS
-- MAKE ENDING SCREEN?
+- ADD SOUNDS
 */
 
 // Story structure as an object
 const storyData = {
 
     Start: {
-        description: "You're a cowboy in Hangman's Hollow. You awake one afternoon in your favorite tavern, The Rusty Oak, "+
+        description: "You're a cowboy in Hangman's Hollow. You awake at the dead of night in your favorite tavern, The Rusty Oak, "+
                     "disoriented and hungover with no recollection of what happened yesterday. "+
                     "Your task is to make it out of the tavern and discover what happened to your town, and make it out alive.... If you can.",
 
         choices: [
-            { text: "Begin", image: "spookytown.webp", next: "Begin" },
+            { text: "Get up", image: "tavern.jpg", next: "Get_up" },
         ]
     },
 
-    Begin: {
-        description: "You awaken, head throbbing, the taste of whiskey still on your tongue. "+
+    Get_up: {
+        description: "You stand up, head throbbing, the taste of whiskey still on your tongue. "+
                     "The floor beneath you is sticky, "+
                     "and the air smells of dust and rain. "+
                     "The dim light sways on the ceiling above, "+
@@ -28,8 +26,8 @@ const storyData = {
                     "Where is everyone? You need to find out what happened.",
 
         choices: [
-            { text: "Try the front door", image: "spookytown.webp", next: "Try_the_front_door" },
-            { text: "Check the bar", image: "spookytown.webp", next: "Check_the_bar" }
+            { text: "Try the front door", image: "tavern.jpg", next: "Try_the_front_door" },
+            { text: "Check the bar", image: "tavern.jpg", next: "Check_the_bar" }
         ]
     },
     
@@ -37,7 +35,7 @@ const storyData = {
         description: "Locked. You need to find the key.",
         
         choices: [
-            { text: "Check the bar", image: "spookytown.webp", next: "Check_the_bar" }
+            { text: "Check the bar", image: "tavern.jpg", next: "Check_the_bar" }
         ]
     },
 
@@ -46,9 +44,9 @@ const storyData = {
                     " Next to the crack sits an envelope, a bottle of whiskey, and a safe.",
 
         choices: [
-            { text: "Try the safe", image: "spookytown.webp", next: "Try_the_safe" },
-            { text: "Open the envelope", image: "spookytown.webp", next: "Open_the_envelope" },
-            { text: "Drink the whiskey", image: "spookytown.webp", next: "Drink_the_whiskey" }
+            { text: "Try the safe", image: "tavern.jpg", next: "Try_the_safe" },
+            { text: "Open the envelope", image: "tavern.jpg", next: "Open_the_envelope" },
+            { text: "Drink the whiskey", image: "tavern.jpg", next: "Drink_the_whiskey" }
         ]
     },
 
@@ -58,10 +56,10 @@ const storyData = {
                     "\"I am a four-digit code. My digits add up to 10, but no single digit is larger than 5, and no number is repeated. What am I?\"\n",
 
         choices: [
-            { text: "9999", image: "spookytown.webp", next: "Wrong_code_9999" },
-            { text: "1984", image: "spookytown.webp", next: "Wrong_code_1984" },
-            { text: "1234", image: "spookytown.webp", next: "Unlock_safe" },
-            { text: "Kick the safe", image: "spookytown.webp", next: "Kick_the_safe" }
+            { text: "9999", image: "tavern.jpg", next: "Wrong_code_9999" },
+            { text: "1984", image: "tavern.jpg", next: "Wrong_code_1984" },
+            { text: "1234", image: "tavern.jpg", next: "Unlock_safe" },
+            { text: "Kick the safe", image: "tavern.jpg", next: "Kick_the_safe" }
         ]
     },
 
@@ -70,9 +68,9 @@ const storyData = {
                     "This must be the wrong code.",
 
         choices: [
-            { text: "1984", image: "spookytown.webp", next: "Wrong_code_twice" },
-            { text: "1234", image: "spookytown.webp", next: "Unlock_safe" },
-            { text: "Kick the safe", image: "spookytown.webp", next: "Kick_the_safe" }
+            { text: "1984", image: "tavern.jpg", next: "Wrong_code_twice" },
+            { text: "1234", image: "tavern.jpg", next: "Unlock_safe" },
+            { text: "Kick the safe", image: "tavern.jpg", next: "Kick_the_safe" }
         ]
     },
 
@@ -81,9 +79,9 @@ const storyData = {
                     "This must be the wrong code.",
 
         choices: [
-            { text: "9999", image: "spookytown.webp", next: "Wrong_code_twice" },
-            { text: "1234", image: "spookytown.webp", next: "Unlock_safe" },
-            { text: "Kick the safe", image: "spookytown.webp", next: "Kick_the_safe" }
+            { text: "9999", image: "tavern.jpg", next: "Wrong_code_twice" },
+            { text: "1234", image: "tavern.jpg", next: "Unlock_safe" },
+            { text: "Kick the safe", image: "tavern.jpg", next: "Kick_the_safe" }
         ]
     },
 
@@ -92,8 +90,8 @@ const storyData = {
                     "This must be the wrong code.",
 
         choices: [
-            { text: "1234", image: "spookytown.webp", next: "Unlock_safe" },
-            { text: "Kick the safe", image: "spookytown.webp", next: "Kick_the_safe" }
+            { text: "1234", image: "tavern.jpg", next: "Unlock_safe" },
+            { text: "Kick the safe", image: "tavern.jpg", next: "Kick_the_safe" }
         ]
     },
 
@@ -102,7 +100,7 @@ const storyData = {
                     "This must be the key to the tavern!",
 
         choices: [
-            { text: "Unlock tavern door", image: "spookytown.webp", next: "Unlock_tavern_door" },
+            { text: "Unlock tavern door", image: "Exit the tavern.jpg", next: "Unlock_tavern_door" },
         ]
     },
 
@@ -111,7 +109,7 @@ const storyData = {
                     "This must be the key to the tavern!",
 
         choices: [
-            { text: "Unlock tavern door", image: "spookytown.webp", next: "Unlock_tavern_door" },
+            { text: "Unlock tavern door", image: "Exit the tavern.jpg", next: "Unlock_tavern_door" },
         ]
     },
 
@@ -123,7 +121,7 @@ const storyData = {
                     "A riddle is scribbled below:\n"+
                     "\'The more you take, the more you leave behind. What am I?\'",
         choices: [
-            { text: "Try the safe", image: "spookytown.webp", next: "Try_the_safe" }
+            { text: "Try the safe", image: "tavern.jpg", next: "Try_the_safe" }
         ]
     },
 
@@ -135,7 +133,7 @@ const storyData = {
 
                     "What do you do now?",
         choices: [
-            { text: "Open the envelope", image: "spookytown.webp", next: "Open_the_envelope_drunk" }
+            { text: "Open the envelope", image: "tavern.jpg", next: "Open_the_envelope_drunk" }
         ]
     },
 
@@ -145,7 +143,7 @@ const storyData = {
                     "\"Teh erom you ekat, teh erom you eavl behind. tWh a mI?\"",
 
         choices: [
-            { text: "Try the safe", image: "spookytown.webp", next: "Try_the_safe_drunk" }
+            { text: "Try the safe", image: "tavern.jpg", next: "Try_the_safe_drunk" }
         ]
     },
 
@@ -155,19 +153,20 @@ const storyData = {
                     "\"tidgis add to 10, onne laregr htan 5, nnoe rpeaetde. hwat ma I?\"\n",
 
         choices: [
-            { text: "Kick the safe", image: "spookytown.webp", next: "Kick_the_safe" }
+            { text: "Kick the safe", image: "tavern.jpg", next: "Kick_the_safe" }
         ]
     },
     
     Unlock_tavern_door: {
         description: "The cold foggy air hits you in the face. The town is eerily quiet. "+
                     "The fog is so thick that you can't see more than a few feet ahead of you. "+
+                    "There is a sign saying \"Town Square\" pointing in one direction and \"Sherrif's office\" point in another. " +
                     "There are a set of footsteps on the "+
-                    "ground leading toward the direction of the Sheriff's office.",
+                    "ground leading towards the Sherrif's office.",
 
         choices: [
-            { text: "Go to sheriff's office", image: "spookytown.webp", next: "Go_to_sherrifs_office" },
-            { text: "Go into town", image: "spookytown.webp", next: "Go_into_town" }
+            { text: "Go to sheriff's office", image: "Sherrif's office.jpg", next: "Go_to_sherrifs_office" },
+            { text: "Go into town", image: "in town.jpg", next: "Go_into_town" }
         ]
     },
 
@@ -176,8 +175,8 @@ const storyData = {
                     "A creak makes your head whip to look at the well that sits in the center of town square.",
 
         choices: [
-            { text: "Go to the well", image: "spookytown.webp", next: "Go_to_the_well" },
-            { text: "Go to the church", image: "spookytown.webp", next: "Go_to_the_church" }
+            { text: "Go to the well", image: "well.jpg", next: "Go_to_the_well" },
+            { text: "Go to the church", image: "church.jpg", next: "Go_to_the_church" }
         ]
     },
 
@@ -189,7 +188,7 @@ const storyData = {
         "You lose.",
 
         choices: [
-            { text: "Play again?", image: "spookytown.webp", next: "Start" }
+            { text: "Play again?", image: "Start.jpg", next: "Start" }
         ]
     },
 
@@ -200,8 +199,8 @@ const storyData = {
                     "The key to the curse is within the boards.",
 
         choices: [
-            { text: "Read the journal", image: "spookytown.webp", next: "Read_the_journal" },
-            { text: "Search the room", image: "spookytown.webp", next: "Search_the_room" }
+            { text: "Read the journal", image: "Sherrif's office.jpg", next: "Read_the_journal" },
+            { text: "Search the room", image: "Sherrif's office.jpg", next: "Search_the_room" }
         ]
     },
 
@@ -211,9 +210,9 @@ const storyData = {
                     "\'Answer and earn your fate. Leave and live another day.\'",
 
         choices: [
-            { text: "Stay", image: "spookytown.webp", next: "Stay" },
-            { text: "Go to sheriff's office", image: "spookytown.webp", next: "Go_to_sherrifs_office_after_church" },
-            { text: "Leave", image: "spookytown.webp", next: "Leave" }
+            { text: "Stay", image: "church.jpg", next: "Stay" },
+            { text: "Go to sheriff's office", image: "Sherrif's office.jpg", next: "Go_to_sherrifs_office_after_church" },
+            { text: "Leave", image: "Leave.jpg", next: "Leave" }
         ]
     },
 
@@ -221,9 +220,9 @@ const storyData = {
         description: "What is always on its way but never arrives?",
 
         choices: [
-            { text: "Happiness", image: "spookytown.webp", next: "Happiness" },
-            { text: "Tomorrow", image: "spookytown.webp", next: "Go_to_the_graveyard_after_church" },
-            { text: "Death", image: "spookytown.webp", next: "Death" }
+            { text: "Happiness", image: "church.jpg", next: "Happiness" },
+            { text: "Tomorrow", image: "crypt.jpg", next: "Go_to_the_graveyard_after_church" },
+            { text: "Death", image: "church.jpg", next: "Death" }
         ]
     },
 
@@ -231,8 +230,8 @@ const storyData = {
         description: "\'I wouldn't be so sure\' the figure remarks. ",
 
         choices: [
-            { text: "Happiness", image: "spookytown.webp", next: "Happiness_death" },
-            { text: "Tomorrow", image: "spookytown.webp", next: "Go_to_the_graveyard_after_church" },
+            { text: "Happiness", image: "church.jpg", next: "Happiness_death" },
+            { text: "Tomorrow", image: "crypt.jpg", next: "Go_to_the_graveyard_after_church" },
         ]
     },
 
@@ -240,8 +239,8 @@ const storyData = {
         description: "The figure laughs dryly, saying nothing.",
 
         choices: [
-            { text: "Tomorrow", image: "spookytown.webp", next: "Go_to_the_graveyard_after_church" },
-            { text: "Death", image: "spookytown.webp", next: "Death_happiness" }
+            { text: "Tomorrow", image: "crypt.jpg", next: "Go_to_the_graveyard_after_church" },
+            { text: "Death", image: "church.jpg", next: "Death_happiness" }
         ]
     },
 
@@ -249,7 +248,7 @@ const storyData = {
         description: "\'I wouldn't be so sure\' the figure remarks. ",
 
         choices: [
-            { text: "Tomorrow", image: "spookytown.webp", next: "Go_to_the_graveyard_after_church" },
+            { text: "Tomorrow", image: "crypt.jpg", next: "Go_to_the_graveyard_after_church" },
         ]
     },
 
@@ -257,7 +256,7 @@ const storyData = {
         description: "The figure laughs dryly, saying nothing.",
 
         choices: [
-            { text: "Tomorrow", image: "spookytown.webp", next: "Go_to_the_graveyard_after_church" },
+            { text: "Tomorrow", image: "crypt.jpg", next: "Go_to_the_graveyard_after_church" },
         ]
     },
 
@@ -272,19 +271,19 @@ const storyData = {
                     "you mount the horse and ride out of Hangman's Hollow. ",
 
         choices: [
-            { text: "Play again?", image: "spookytown.webp", next: "Start" }
+            { text: "Play again?", image: "Start.jpg", next: "Start" }
         ]
     },    
 
     Search_the_room: {
         description: "You notice a floorboard that looks out of place. "+
-                    "You lift the loose floorboard to reveal an old key and a map of the old "+
+                    "You lift the loose floorboard to reveal a map of the old "+
                     "graveyard at the edge of town with a circle drawn in the middle of the graveyard. ",
 
         choices: [
-            { text: "Go to the church", image: "spookytown.webp", next: "Go_to_the_church" },
-            { text: "Go to the well", image: "spookytown.webp", next: "Go_to_the_well" },
-            { text: "Go to the graveyard", image: "spookytown.webp", next: "Go_to_the_graveyard" }
+            { text: "Go to the church", image: "church.jpg", next: "Go_to_the_church" },
+            { text: "Go to the well", image: "well.jpg", next: "Go_to_the_well" },
+            { text: "Go to the graveyard", image: "crypt.jpg", next: "Go_to_the_graveyard" }
         ]
     },
 
@@ -294,8 +293,8 @@ const storyData = {
                     "alive—until last night. Now, we all must pay.",
 
         choices: [
-            { text: "Search the room", image: "spookytown.webp", next: "Search the room" },
-            { text: "Go to the graveyard", image: "spookytown.webp", next: "Go_to_the_graveyard" }
+            { text: "Search the room", image: "Sherrif's office.jpg", next: "Search_the_room" },
+            { text: "Go to the graveyard", image: "crypt.jpg", next: "Go_to_the_graveyard" }
         ]
     },
 
@@ -306,19 +305,19 @@ const storyData = {
                     "The key to the curse is within the boards.",
 
         choices: [
-            { text: "Read the journal", image: "spookytown.webp", next: "Read_the_journal_after_church" },
-            { text: "Search the room", image: "spookytown.webp", next: "Search_the_room_after_church" }
+            { text: "Read the journal", image: "Sherrif's office.jpg", next: "Read_the_journal_after_church" },
+            { text: "Search the room", image: "Sherrif's office.jpg", next: "Search_the_room_after_church" }
         ]
     },
 
     Search_the_room_after_church: {
         description: "You notice a floorboard that looks out of place. "+
-                    "You lift the loose floorboard to reveal an old key and a map of the old "+
+                    "You lift the loose floorboard to reveal a map of the old "+
                     "graveyard at the edge of town with a circle drawn in the middle of the graveyard. ",
 
         choices: [
-            { text: "Go to the well", image: "spookytown.webp", next: "Go_to_the_well" },
-            { text: "Go to the graveyard", image: "spookytown.webp", next: "Go_to_the_graveyard_after_church" }
+            { text: "Go to the well", image: "Sherrif's office.jpg", next: "Go_to_the_well" },
+            { text: "Go to the graveyard", image: "crypt.jpg", next: "Go_to_the_graveyard_after_church" }
         ]
     },
 
@@ -334,8 +333,8 @@ const storyData = {
                     "Last night, there was no sacrifice....Now we all must suffer.\"",
 
         choices: [
-            { text: "Search the room", image: "spookytown.webp", next: "Search_the_room_after_church" },
-            { text: "Go to the graveyard", image: "spookytown.webp", next: "Go_to_the_graveyard_after_church" }
+            { text: "Search the room", image: "Sherrif's office.jpg", next: "Search_the_room_after_church" },
+            { text: "Go to the graveyard", image: "crypt.jpg", next: "Go_to_the_graveyard_after_church" }
         ]
     },
 
@@ -346,7 +345,7 @@ const storyData = {
                     "The markings on the crypt glow. There are 3 ancient stone buttons: Clock, Skull, Scales.",
 
         choices: [
-            { text: "Examine the crypt", image: "spookytown.webp", next: "Examine_the_crypt" }
+            { text: "Examine the crypt", image: "crypt.jpg", next: "Examine_the_crypt" }
         ]
     },
 
@@ -356,7 +355,7 @@ const storyData = {
                     "The markings on the crypt glow. There are 3 ancient stone buttons: Clock, Skull, Scales.",
 
         choices: [
-            { text: "Examine the crypt", image: "spookytown.webp", next: "Examine_the_crypt" }
+            { text: "Examine the crypt", image: "crypt.jpg", next: "Examine_the_crypt" }
         ]
     },
 
@@ -365,9 +364,9 @@ const storyData = {
                     "\"The past and present must be balanced before the future can rest",
 
         choices: [
-            { text: "🕒", image: "spookytown.webp", next: "Examine_the_crypt_clock" },
-            { text: "⚖️", image: "spookytown.webp", next: "Examine_the_crypt_scales" },
-            { text: "💀", image: "spookytown.webp", next: "Examine_the_crypt_skull" }
+            { text: "🕒", image: "crypt.jpg", next: "Examine_the_crypt_clock" },
+            { text: "⚖️", image: "crypt.jpg", next: "Examine_the_crypt_scales" },
+            { text: "💀", image: "crypt.jpg", next: "Examine_the_crypt_skull" }
         ]
     },
 
@@ -376,8 +375,8 @@ const storyData = {
                     "\"The past and present must be balanced before the future can rest",
 
         choices: [
-            { text: "⚖️", image: "spookytown.webp", next: "Examine_the_crypt_clock_scales" },
-            { text: "💀", image: "spookytown.webp", next: "Examine_the_crypt_clock_skull" }
+            { text: "⚖️", image: "crypt.jpg", next: "Examine_the_crypt_clock_scales" },
+            { text: "💀", image: "crypt.jpg", next: "Examine_the_crypt_clock_skull" }
         ]
     },
 
@@ -386,8 +385,8 @@ const storyData = {
                     "\"The past and present must be balanced before the future can rest",
 
         choices: [
-            { text: "🕒", image: "spookytown.webp", next: "Examine_the_crypt_scales_clock" },
-            { text: "💀", image: "spookytown.webp", next: "Examine_the_crypt_scales_skull" }
+            { text: "🕒", image: "crypt.jpg", next: "Examine_the_crypt_scales_clock" },
+            { text: "💀", image: "crypt.jpg", next: "Examine_the_crypt_scales_skull" }
         ]
     },
 
@@ -396,8 +395,8 @@ const storyData = {
                     "\"The past and present must be balanced before the future can rest",
 
         choices: [
-            { text: "🕒", image: "spookytown.webp", next: "Examine_the_crypt_skull_clock" },
-            { text: "⚖️", image: "spookytown.webp", next: "Examine_the_crypt_skull_scales" },
+            { text: "🕒", image: "crypt.jpg", next: "Examine_the_crypt_skull_clock" },
+            { text: "⚖️", image: "crypt.jpg", next: "Examine_the_crypt_skull_scales" },
         ]
     },
 
@@ -406,7 +405,7 @@ const storyData = {
                     "\"The past and present must be balanced before the future can rest",
 
         choices: [
-            { text: "💀", image: "spookytown.webp", next: "Examine_the_crypt_clock_scales_skull" },
+            { text: "💀", image: "crypt.jpg", next: "Examine_the_crypt_clock_scales_skull" },
         ]
     },
 
@@ -415,7 +414,7 @@ const storyData = {
                     "\"The past and present must be balanced before the future can rest",
 
         choices: [
-            { text: "⚖️", image: "spookytown.webp", next: "Examine_the_crypt_clock_skull_scales" },
+            { text: "⚖️", image: "crypt.jpg", next: "Examine_the_crypt_clock_skull_scales" },
         ]
     },
     
@@ -424,7 +423,7 @@ const storyData = {
                     "\"The past and present must be balanced before the future can rest",
 
         choices: [
-            { text: "💀", image: "spookytown.webp", next: "Examine_the_crypt_scales_clock_skull" }
+            { text: "💀", image: "crypt.jpg", next: "Examine_the_crypt_scales_clock_skull" }
         ]
     },
 
@@ -433,7 +432,7 @@ const storyData = {
                     "\"The past and present must be balanced before the future can rest",
 
         choices: [
-            { text: "🕒", image: "spookytown.webp", next: "Examine_the_crypt_scales_skull_clock" }
+            { text: "🕒", image: "crypt.jpg", next: "Examine_the_crypt_scales_skull_clock" }
         ]
     },
 
@@ -442,7 +441,7 @@ const storyData = {
                     "\"The past and present must be balanced before the future can rest",
 
         choices: [
-            { text: "⚖️", image: "spookytown.webp", next: "Examine_the_crypt_skull_clock_scales" }
+            { text: "⚖️", image: "crypt.jpg", next: "Examine_the_crypt_skull_clock_scales" }
         ]
     },
 
@@ -451,7 +450,7 @@ const storyData = {
                     "\"The past and present must be balanced before the future can rest",
 
         choices: [
-            { text: "🕒", image: "spookytown.webp", next: "Examine_the_crypt_skull_scales_clock" }
+            { text: "🕒", image: "crypt.jpg", next: "Examine_the_crypt_skull_scales_clock" }
         ]
     },
 
@@ -465,7 +464,7 @@ const storyData = {
                     "They are finally able to rest.",
 
         choices: [
-            { text: "Play again?", image: "spookytown.webp", next: "Start" },
+            { text: "Play again?", image: "good ending.jpg", next: "Start" },
         ]
     },
 
@@ -475,9 +474,9 @@ const storyData = {
                      "This must've been the wrong order.",
 
         choices: [
-            { text: "🕒", image: "spookytown.webp", next: "Examine_the_crypt_clock" },
-            { text: "⚖️", image: "spookytown.webp", next: "Examine_the_crypt_scales" },
-            { text: "💀", image: "spookytown.webp", next: "Examine_the_crypt_skull" }
+            { text: "🕒", image: "crypt.jpg", next: "Examine_the_crypt_clock" },
+            { text: "⚖️", image: "crypt.jpg", next: "Examine_the_crypt_scales" },
+            { text: "💀", image: "crypt.jpg", next: "Examine_the_crypt_skull" }
         ]
     },
 
@@ -486,9 +485,9 @@ const storyData = {
                      "This must've been the wrong order.",
 
         choices: [
-            { text: "🕒", image: "spookytown.webp", next: "Examine_the_crypt_clock" },
-            { text: "⚖️", image: "spookytown.webp", next: "Examine_the_crypt_scales" },
-            { text: "💀", image: "spookytown.webp", next: "Examine_the_crypt_skull" }
+            { text: "🕒", image: "crypt.jpg", next: "Examine_the_crypt_clock" },
+            { text: "⚖️", image: "crypt.jpg", next: "Examine_the_crypt_scales" },
+            { text: "💀", image: "crypt.jpg", next: "Examine_the_crypt_skull" }
         ]
     },
 
@@ -497,9 +496,9 @@ const storyData = {
                      "This must've been the wrong order.",
 
         choices: [
-            { text: "🕒", image: "spookytown.webp", next: "Examine_the_crypt_clock" },
-            { text: "⚖️", image: "spookytown.webp", next: "Examine_the_crypt_scales" },
-            { text: "💀", image: "spookytown.webp", next: "Examine_the_crypt_skull" }
+            { text: "🕒", image: "crypt.jpg", next: "Examine_the_crypt_clock" },
+            { text: "⚖️", image: "crypt.jpg", next: "Examine_the_crypt_scales" },
+            { text: "💀", image: "crypt.jpg", next: "Examine_the_crypt_skull" }
         ]
     },
 
@@ -508,9 +507,9 @@ const storyData = {
                      "This must've been the wrong order. \n\n",
 
         choices: [
-            { text: "🕒", image: "spookytown.webp", next: "Examine_the_crypt_clock" },
-            { text: "⚖️", image: "spookytown.webp", next: "Examine_the_crypt_scales" },
-            { text: "💀", image: "spookytown.webp", next: "Examine_the_crypt_skull" }
+            { text: "🕒", image: "crypt.jpg", next: "Examine_the_crypt_clock" },
+            { text: "⚖️", image: "crypt.jpg", next: "Examine_the_crypt_scales" },
+            { text: "💀", image: "crypt.jpg", next: "Examine_the_crypt_skull" }
         ]
     },
 
@@ -519,12 +518,53 @@ const storyData = {
                      "This must've been the wrong order.",
 
         choices: [
-            { text: "🕒", image: "spookytown.webp", next: "Examine_the_crypt_clock" },
-            { text: "⚖️", image: "spookytown.webp", next: "Examine_the_crypt_scales" },
-            { text: "💀", image: "spookytown.webp", next: "Examine_the_crypt_skull" }
+            { text: "🕒", image: "crypt.jpg", next: "Examine_the_crypt_clock" },
+            { text: "⚖️", image: "crypt.jpg", next: "Examine_the_crypt_scales" },
+            { text: "💀", image: "crypt.jpg", next: "Examine_the_crypt_skull" }
         ]
     }
 };
+    
+
+/* 
+
+NOT FINISHED/WORKING YET
+
+// Audio map to store all sound items
+const audioMap = {
+    Start: "sounds/rainSound.mp3",
+    Stand_up: "sounds/rainSound.mp3",
+    Try_the_front_door: "sounds/rainSound.mp3",
+    Check_the_bar: "sounds/rainSound.mp3",
+    Open_the_safe: "sounds/rainSound.mp3",
+    Open_the_envelope: "sounds/rainSound.mp3",
+    Drink_the_whiskey: "sounds/rainSound.mp3",
+    Open_the_envelope_drunk: "sounds/rainSound.mp3",
+    Open_the_safe_drunk: "sounds/rainSound.mp3",
+    Unlock_tavern_door: "sounds/rainSound.mp3",
+    Go_to_sherrifs_office: "sounds/rainSound.mp3",
+    Search_the_room: "sounds/rainSound.mp3",
+    Read_the_journal: "sounds/rainSound.mp3",
+    Go_into_town: "sounds/rainSound.mp3",
+    Go_to_the_well: "sounds/rainSound.mp3",
+    Go_to_the_church: "sounds/rainSound.mp3",
+    Stay: "sounds/rainSound.mp3",
+    Leave: "sounds/rainSound.mp3",
+    Go_to_the_graveyard: "sounds/rainSound.mp3",
+    Examine_the_crypt: "sounds/rainSound.mp3",
+    // Add all other scenes as needed
+};
+
+// Function to play scene-specific sound
+function playSceneSound(sceneKey) {
+    const audioFile = audioMap[sceneKey];
+    if (audioFile) {
+        const audio = new Audio(audioFile);
+        audio.play();
+    }
+}
+*/
+
 
 // Recursive function to update the story scene
 function updateScene(sceneKey) {
@@ -557,7 +597,7 @@ function updateScene(sceneKey) {
 
 // Function to begin the game
 function startGame() {
-    updateScene("Begin");
+    updateScene("Start");
 }
 
 // Function to restart the game
