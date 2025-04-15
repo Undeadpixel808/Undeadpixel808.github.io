@@ -158,9 +158,9 @@ const storyData = {
     },
     
     Unlock_tavern_door: {
-        description: "The cold foggy air hits you in the face. The town is eerily quiet. "+
+        description: "The cold foggy air hits you in the face. The town is filled with a deafening silence. "+
                     "The fog is so thick that you can't see more than a few feet ahead of you. "+
-                    "There is a sign saying \"Town Square\" pointing in one direction and \"sherrif's office\" point in another. " +
+                    "There is a sign saying \"Town Square\" pointing in one direction and \"Sherrif's Office\" point in another. " +
                     "There are a set of footsteps on the "+
                     "ground leading towards the sherrif's office.",
 
@@ -374,7 +374,7 @@ const storyData = {
 
     Examine_the_crypt: {
         description: "Below, a script reads: "+
-                    "\"The past and present must be balanced before the future can rest",
+                    "\"The past and present must be balanced before the future can rest\"",
 
         choices: [
             { text: "🕒", image: "crypt.jpg", next: "Examine_the_crypt_clock" },
@@ -385,7 +385,7 @@ const storyData = {
 
     Examine_the_crypt_clock: {
         description: "Below, a script reads: "+
-                    "\"The past and present must be balanced before the future can rest",
+                    "\"The past and present must be balanced before the future can rest\"",
 
         choices: [
             { text: "⚖️", image: "crypt.jpg", next: "Examine_the_crypt_clock_scales" },
@@ -395,7 +395,7 @@ const storyData = {
 
     Examine_the_crypt_scales: {
         description: "Below, a script reads: " +
-                    "\"The past and present must be balanced before the future can rest",
+                    "\"The past and present must be balanced before the future can rest\"",
 
         choices: [
             { text: "🕒", image: "crypt.jpg", next: "Examine_the_crypt_scales_clock" },
@@ -405,7 +405,7 @@ const storyData = {
 
     Examine_the_crypt_skull: {
         description: "Below, a script reads: " +
-                    "\"The past and present must be balanced before the future can rest",
+                    "\"The past and present must be balanced before the future can rest\"",
 
         choices: [
             { text: "🕒", image: "crypt.jpg", next: "Examine_the_crypt_skull_clock" },
@@ -415,7 +415,7 @@ const storyData = {
 
     Examine_the_crypt_clock_scales: {
         description: "Below, a script reads: "+
-                    "\"The past and present must be balanced before the future can rest",
+                    "\"The past and present must be balanced before the future can rest\"",
 
         choices: [
             { text: "💀", image: "good ending.jpg", next: "Examine_the_crypt_clock_scales_skull" },
@@ -424,7 +424,7 @@ const storyData = {
 
     Examine_the_crypt_clock_skull: {
         description: "Below, a script reads: " +
-                    "\"The past and present must be balanced before the future can rest",
+                    "\"The past and present must be balanced before the future can rest\"",
 
         choices: [
             { text: "⚖️", image: "crypt.jpg", next: "Examine_the_crypt_clock_skull_scales" },
@@ -433,7 +433,7 @@ const storyData = {
     
     Examine_the_crypt_scales_clock: {
         description: "Below, a script reads: " +
-                    "\"The past and present must be balanced before the future can rest",
+                    "\"The past and present must be balanced before the future can rest\"",
 
         choices: [
             { text: "💀", image: "crypt.jpg", next: "Examine_the_crypt_scales_clock_skull" }
@@ -442,7 +442,7 @@ const storyData = {
 
     Examine_the_crypt_scales_skull: {
         description: "Below, a script reads: " +
-                    "\"The past and present must be balanced before the future can rest",
+                    "\"The past and present must be balanced before the future can rest\"",
 
         choices: [
             { text: "🕒", image: "crypt.jpg", next: "Examine_the_crypt_scales_skull_clock" }
@@ -451,7 +451,7 @@ const storyData = {
 
     Examine_the_crypt_skull_clock: {
         description: "Below, a script reads: " +
-                    "\"The past and present must be balanced before the future can rest",
+                    "\"The past and present must be balanced before the future can rest\"",
 
         choices: [
             { text: "⚖️", image: "crypt.jpg", next: "Examine_the_crypt_skull_clock_scales" }
@@ -460,7 +460,7 @@ const storyData = {
 
     Examine_the_crypt_skull_scales: {
         description: "Below, a script reads: " +
-                    "\"The past and present must be balanced before the future can rest",
+                    "\"The past and present must be balanced before the future can rest\"",
 
         choices: [
             { text: "🕒", image: "crypt.jpg", next: "Examine_the_crypt_skull_scales_clock" }
@@ -470,7 +470,7 @@ const storyData = {
     //correct full combination
     Examine_the_crypt_clock_scales_skull: {
         description: "The ground trembles and the door to the crypt opens. "+
-                    "The fog starts to lift and the sky returns to its normal light blue color. \n"+
+                    "The fog starts to lift as you feel the air clear of past sins. \n"+
 
                     "You have broken the curse on Hangman's Hollow..The victim's spirits were freed when the crypt was opened. \n\n"+
 
