@@ -7,32 +7,75 @@
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
 </head>
-<body>
-    <div class="container preventSelect">
-        <button class="fullscreenButton" type="submit" onclick="fullscreenToggle()">
-            <img src="fullscreen_icon.png"></img>
-        </button>
 
-        <button class = "refreshButton" type="submit" onclick="restartGame()">
-            <img src = "refresh_icon.png"></img>
-        </button>
+<audio autoplay>
+    <source src="sounds/rainSound.mp3" type="audio/mpeg">
+</audio>
 
-        <button class = "homeButton" type="submit" onclick="goHome()">
-            <img src = "home_icon.png"></img>
-        </button>
+<div class="container preventSelect">
+    <body>
+        <div class="container preventSelect">
+            
+            <button class="fullscreenButton" type="submit" onclick="fullscreenToggle()">
+                <img src="icons/fullscreen_icon.png"></img>
+            </button>
+
+            <button class = "settingsButton" type="submit" onclick="toggleSettings()">
+                <img src = "icons/menu_icon.png"></img>
+            </button>
+
+            <button class = "refreshButton" type="submit" onclick="restartGame()">
+                <img src = "icons/refresh_icon.png"></img>
+            </button>
+
+            <button class = "homeButton" type="submit" onclick="goHome()">
+                <img src = "icons/home_icon.png"></img>
+            </button>
+
+            <div class="descriptionBox">
+                <p id="storyText">Click "Begin" to start the game</p>
+            </div>
+
+            <div class="illustrationBox">
+                <div class="illustrationMargin"></div>
+                <img id="illustrationImage" src="illustrations/Start.jpg" width="90%" height="80%" alt="Illustration">
+            </div>
+
+            <div class="optionButtonContainer">
+                <button class="optionButton" onclick="startGame()">Begin</button>
+            </div>
+    </body>
+
+    <!-- Options Menu html -->
+    <div class="content" id="settings">
+        <h1>Settings</h1>
+        <h2>Colorblind Settings</h2>
+        <p>Click the buttons below to switch between different colorblind modes.</p>
+
+        <button class="inMenuButton" onclick="setMode('none')">Normal Vision</button>
+        <button class="inMenuButton" onclick="setMode('protanopia')">Protanopia</button>
+        <button class="inMenuButton" onclick="setMode('deuteranopia')">Deuteranopia</button>
+        <button class="inMenuButton" onclick="setMode('tritanopia')">Tritanopia</button>
+
+        <h2>Sound Settings</h2>
+        <div class="sound-buttons">
+            <button class="inMenuButton" onclick="toggleplay()">Play/Pause Music</button>
+        </div>
+        <p>Adjust volume for ambient music or sound effects</p>
+        <p>Music</p>
+
+        <input type="range" id="volume" min="0" max="100" value="20" oninput="adjustVolume(this.value)">
+        <span id="volume-label">20%</span>
+
+        <audio id="audioSample" loop src="sounds/rainsound.mp3" preload="auto"></audio>
+
+        <p>Sound Effects</p>
+        <input type="range" id="sfx-volume" min="0" max="100" value="20" oninput="adjustSFXVolume(this.value)">
+        <span id="sfx-volume-label">20%</span>
         
-        <div class="descriptionBox">
-            <p id="storyText">Click "Begin" to start the game</p>
-        </div>
-
-        <div class="illustrationBox">
-            <div class="illustrationMargin"></div>
-            <img id="illustrationImage" src="Start.jpg" width="90%" height="80%" alt="Illustration">
-        </div>
-
-        <div class="optionButtonContainer">
-            <button class="optionButton" onclick="startGame()">Begin</button>
-        </div>
+        <audio id="sfx-sample" src="sounds/rainsound.mp3" preload="auto"></audio>
+        <audio id="sfx-sample" src="sounds/buttonClick.mp3" preload="auto"></audio>  
     </div>
-</body>
+</div>
+
 </html>
