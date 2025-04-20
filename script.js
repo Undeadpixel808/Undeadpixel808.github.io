@@ -2,6 +2,13 @@
 let globalSFXVolume = 0.2;
 let ambientVolume = 0.2;
 
+// Constants
+const settingsDiv = document.getElementById('settings');
+const audioSample = document.getElementById('audioSample');
+const volumeLabel = document.getElementById('volume-label');
+const sfxSample = document.getElementById('sfx-sample');
+const sfxVolumeLabel = document.getElementById('sfx-volume-label');
+
 // Audio map to store all sound items
 const audioMap = {
     Start: "sounds/none.mp3",
@@ -161,32 +168,18 @@ function fullscreenToggle() {
     }
 }
 
-function toggleSettings() {
-    if (settingsDiv.style.display === 'none' || settingsDiv.style.display === '') {
-        settingsDiv.style.display = 'block';
-    } else {
-        settingsDiv.style.display = 'none';
-    }
-}
-
+// Function to apply colour blindness settings
 function setMode(mode) {
     document.body.className = mode;
 }
-const settingsDiv = document.getElementById('settings');
-const audioSample = document.getElementById('audioSample');
-const volumeLabel = document.getElementById('volume-label');
-const sfxSample = document.getElementById('sfx-sample');
-const sfxVolumeLabel = document.getElementById('sfx-volume-label');
 
+// Function to toggle the settings menu
 function toggleSettings() {
     settingsDiv.style.display = (settingsDiv.style.display === 'none' || settingsDiv.style.display === '') 
         ? 'block' : 'none';
 }
 
-function setMode(mode) {
-    document.body.className = mode;
-}
-
+// Function to toggle ambient rain sounds
 function toggleplay() {
     audioSample.volume = ambientVolume;
     if (audioSample.paused) {
@@ -196,20 +189,14 @@ function toggleplay() {
     }
 }
 
+// Function to adjust the volume of ambient rain sounds
 function adjustVolume(value) {
     ambientVolume = value / 100;
     audioSample.volume = ambientVolume;
     volumeLabel.textContent = `${value}%`;
 }
 
-function playSFX() {
-    if (sfxSample.paused) {
-        sfxSample.play();
-    } else {
-        sfxSample.pause();
-    }
-}
-
+// Function to adjust the volume of all SFX
 function adjustSFXVolume(value) {
     globalSFXVolume = value / 100;
     sfxSample.volume = globalSFXVolume;
