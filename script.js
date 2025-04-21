@@ -155,7 +155,7 @@ function fullscreenToggle() {
         } else if (elem.msRequestFullscreen) { //IE11
             elem.msRequestFullscreen();
         }
-        buttonImage.src = "minimise_icon.png";
+        buttonImage.src = "icons/minimise_icon.png";
     } else {
         if (document.exitFullscreen) {
             document.exitFullscreen();
@@ -164,7 +164,7 @@ function fullscreenToggle() {
         } else if (document.msExitFullscreen) { //IE11
             document.msExitFullscreen();
         }
-        buttonImage.src = "fullscreen_icon.png";
+        buttonImage.src = "icons/fullscreen_icon.png";
     }
 }
 
