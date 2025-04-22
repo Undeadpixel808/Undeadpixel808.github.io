@@ -573,7 +573,7 @@ const storyData = {
     },
 
     Examine_the_crypt: {
-        description: "Below, a script reads: "+
+        description: "Below, a script reads: \n\n "+
                     "\"The weight of time must be balanced before doomed souls can pass on\"",
 
         choices: [
@@ -584,7 +584,7 @@ const storyData = {
     },
 
     Examine_the_crypt_clock: {
-        description: "Below, a script reads: "+
+        description: "Below, a script reads: \n\n "+
                     "\"The weight of time must be balanced before doomed souls can pass on\"",
 
         choices: [
@@ -594,7 +594,7 @@ const storyData = {
     },
 
     Examine_the_crypt_scales: {
-        description: "Below, a script reads: " +
+        description: "Below, a script reads: \n\n " +
                     "\"The weight of time must be balanced before doomed souls can pass on\"",
 
         choices: [
@@ -604,7 +604,7 @@ const storyData = {
     },
 
     Examine_the_crypt_skull: {
-        description: "Below, a script reads: " +
+        description: "Below, a script reads: \n\n " +
                     "\"The weight of time must be balanced before doomed souls can pass on\"",
 
         choices: [
@@ -614,7 +614,7 @@ const storyData = {
     },
 
     Examine_the_crypt_clock_scales: {
-        description: "Below, a script reads: "+
+        description: "Below, a script reads: \n\n "+
                     "\"The weight of time must be balanced before doomed souls can pass on\"",
 
         choices: [
@@ -623,7 +623,7 @@ const storyData = {
     },
 
     Examine_the_crypt_clock_skull: {
-        description: "Below, a script reads: " +
+        description: "Below, a script reads: \n\n " +
                     "\"The weight of time must be balanced before doomed souls can pass on\"",
 
         choices: [
@@ -632,7 +632,7 @@ const storyData = {
     },
     
     Examine_the_crypt_scales_clock: {
-        description: "Below, a script reads: " +
+        description: "Below, a script reads: \n\n " +
                     "\"The weight of time must be balanced before doomed souls can pass on\"",
 
         choices: [
@@ -641,7 +641,7 @@ const storyData = {
     },
 
     Examine_the_crypt_scales_skull: {
-        description: "Below, a script reads: " +
+        description: "Below, a script reads: \n\n " +
                     "\"The weight of time must be balanced before doomed souls can pass on\"",
 
         choices: [
@@ -650,7 +650,7 @@ const storyData = {
     },
 
     Examine_the_crypt_skull_clock: {
-        description: "Below, a script reads: " +
+        description: "Below, a script reads: \n\n " +
                     "\"The weight of time must be balanced before doomed souls can pass on\"",
 
         choices: [
@@ -659,7 +659,7 @@ const storyData = {
     },
 
     Examine_the_crypt_skull_scales: {
-        description: "Below, a script reads: " +
+        description: "Below, a script reads: \n\n " +
                     "\"The weight of time must be balanced before doomed souls can pass on\"",
 
         choices: [
@@ -684,7 +684,8 @@ const storyData = {
     // Wrong full combinations:
     Examine_the_crypt_clock_skull_scales: {
         description: "The crypt groans as the buttons scrape against the stone as they push themselves back out.\n\n" +
-                     "This must've been the wrong order.",
+                     "This must've been the wrong order.\n\n"+
+                     "\"The weight of time must be balanced before doomed souls can pass on\"",
 
         choices: [
             { text: "⚖️", image: "illustrations/crypt.jpg", next: "Examine_the_crypt_scales" },
@@ -695,7 +696,8 @@ const storyData = {
 
     Examine_the_crypt_scales_clock_skull: {
         description: "The crypt groans as the buttons scrape against the stone as they push themselves back out.\n\n" +
-                     "This must've been the wrong order.",
+                     "This must've been the wrong order.\n\n"+
+                     "\"The weight of time must be balanced before doomed souls can pass on\"",
 
         choices: [
             { text: "⚖️", image: "illustrations/crypt.jpg", next: "Examine_the_crypt_scales" },
@@ -706,7 +708,8 @@ const storyData = {
 
     Examine_the_crypt_scales_skull_clock: {
         description: "The crypt groans as the buttons scrape against the stone as they push themselves back out.\n\n" +
-                     "This must've been the wrong order.",
+                     "This must've been the wrong order.\n\n"+
+                     "\"The weight of time must be balanced before doomed souls can pass on\"",
 
         choices: [
             { text: "⚖️", image: "illustrations/crypt.jpg", next: "Examine_the_crypt_scales" },
@@ -717,7 +720,8 @@ const storyData = {
 
     Examine_the_crypt_skull_clock_scales: {
         description: "The crypt groans as the buttons scrape against the stone as they push themselves back out.\n\n" +
-                     "This must've been the wrong order. \n\n",
+                     "This must've been the wrong order. \n\n"+
+                     "\"The weight of time must be balanced before doomed souls can pass on\"",
 
         choices: [
             { text: "⚖️", image: "illustrations/crypt.jpg", next: "Examine_the_crypt_scales" },
@@ -728,7 +732,8 @@ const storyData = {
 
     Examine_the_crypt_skull_scales_clock: {
         description: "The crypt groans as the buttons scrape against the stone as they push themselves back out.\n\n" +
-                     "This must've been the wrong order.",
+                     "This must've been the wrong order.\n\n"+
+                     "\"The weight of time must be balanced before doomed souls can pass on\"",
 
         choices: [
             { text: "⚖️", image: "illustrations/crypt.jpg", next: "Examine_the_crypt_scales" },
