@@ -209,7 +209,7 @@ const storyData = {
     Start: {
         description: "You're a cowboy in Hangman's Hollow. You awake at the dead of night in your favorite tavern, The Rusty Oak, "+
                     "disoriented and hungover with no recollection of what happened yesterday. "+
-                    "Your task is to make it out of the tavern and discover what happened to your town, and make it out alive.... If you can.",
+                    "Your task is to leave the tavern and discover what happened to your town, and make it out alive... if you can.",
 
         choices: [
             { text: "Get up", image: "illustrations/tavern.jpg", next: "Get_up" },
