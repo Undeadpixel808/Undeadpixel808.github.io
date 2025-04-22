@@ -61,14 +61,14 @@
         <p>Adjust volume for ambient music or sound effects</p>
         <p>Music</p>
 
-        <input type="range" id="volume" min="0" max="100" value="20" oninput="adjustVolume(this.value)">
-        <span id="volume-label">20%</span>
+        <input type="range" id="volume" min="0" max="100" value="50" oninput="adjustVolume(this.value)">
+        <span id="volume-label">50%</span>
 
         <audio id="audioSample" loop src="sounds/rainsound.mp3" preload="auto"></audio>
 
         <p>Sound Effects</p>
-        <input type="range" id="sfx-volume" min="0" max="100" value="20" oninput="adjustSFXVolume(this.value)">
-        <span id="sfx-volume-label">20%</span>
+        <input type="range" id="sfx-volume" min="0" max="100" value="50" oninput="adjustSFXVolume(this.value)">
+        <span id="sfx-volume-label">50%</span>
     
         <audio id="sfx-sample" src="sounds/buttonClick.mp3" preload="auto"></audio>  
     </div>
