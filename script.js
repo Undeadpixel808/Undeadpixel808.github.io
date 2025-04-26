@@ -269,7 +269,7 @@ const storyData = {
                     "This must be the wrong code.",
 
         choices: [
-            { text: "1984", image: "illustrations/tavern.jpg", next: "Wrong_code_twice" },
+            { text: "1984", image: "illustrations/tavern.jpg", next: "Wrong_code_twice_1984" },
             { text: "1234", image: "illustrations/tavern.jpg", next: "Unlock_safe" },
             { text: "Kick the safe", image: "illustrations/tavern.jpg", next: "Kick_the_safe" }
         ]
@@ -280,13 +280,23 @@ const storyData = {
                     "This must be the wrong code.",
 
         choices: [
-            { text: "9999", image: "illustrations/tavern.jpg", next: "Wrong_code_twice" },
+            { text: "9999", image: "illustrations/tavern.jpg", next: "Wrong_code_twice_9999" },
             { text: "1234", image: "illustrations/tavern.jpg", next: "Unlock_safe" },
             { text: "Kick the safe", image: "illustrations/tavern.jpg", next: "Kick_the_safe" }
         ]
     },
 
-    Wrong_code_twice: {
+    Wrong_code_twice_9999: {
+        description: "You try the door after entering 9999, but it doesn't budge. \n\n"+
+                    "This must be the wrong code.",
+
+        choices: [
+            { text: "1234", image: "illustrations/tavern.jpg", next: "Unlock_safe" },
+            { text: "Kick the safe", image: "illustrations/tavern.jpg", next: "Kick_the_safe" }
+        ]
+    },
+
+    Wrong_code_twice_1984: {
         description: "You try the door after entering 1984, but it doesn't budge. \n\n"+
                     "This must be the wrong code.",
 
