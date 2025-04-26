@@ -127,6 +127,7 @@ function startGame() {
 
 // Function to restart the game
 function restartGame() {
+    document.getElementById("illustrationImage").src = "illustrations/Begin.jpg";
     updateScene("Start");
 }
 
